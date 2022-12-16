@@ -70,9 +70,7 @@ Public Class Login
         End If
     End Sub
 
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 
     Private Sub Login_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         incpass.Visible = False
@@ -82,17 +80,15 @@ Public Class Login
 
     End Sub
 
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
-        Painel.Show()
-        Me.Close()
-        fundo.permissao.Text = ""
-        fundo.nome.Text = ""
-        fundo.usuario.Text = ""
-    End Sub
+
 
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click, PictureBox3.Click, PictureBox4.Click
         System.Diagnostics.Process.Start("http://banch.com.br")
     End Sub
 
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+        senha.Show()
+        Me.Close()
 
+    End Sub
 End Class

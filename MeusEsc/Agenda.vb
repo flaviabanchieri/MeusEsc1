@@ -81,6 +81,11 @@ Public Class Agenda
             Me.DataGridView1.Columns("responsavel").HeaderText = "Responsável"
             Me.DataGridView1.Columns("Parte").HeaderText = "Parte"
             Me.DataGridView1.Columns("Fatal").HeaderText = "Prazo Fatal"
+
+
+
+
+
         ElseIf titulo.Text = "Audiências" Then
             Me.DataGridView1.Columns("Data").Visible = False
             Me.DataGridView1.Columns("horamin").Visible = False
@@ -346,6 +351,7 @@ Public Class Agenda
 
 
 
+
     Public Sub cor_semana()
         Label29.ForeColor = Color.DimGray
         seg.ForeColor = Color.DimGray
@@ -593,7 +599,7 @@ Public Class Agenda
                 cmd = con.CreateCommand()
                 cmd.CommandType = CommandType.Text
 
-                cmd.CommandText = "select data, hora, horamin, minuto, parte from Atendimentos WHERE data = '" & data & "' order by horamin desc, minuto"
+                cmd.CommandText = "select data, hora, horamin, minuto, parte from Atendimento WHERE data = '" & data & "' order by horamin desc, minuto"
 
                 cmd.ExecuteNonQuery()
 
@@ -1335,5 +1341,64 @@ Public Class Agenda
         Catch ex As Exception
         End Try
     End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Login.Show()
+        Me.Close()
+        fundo.Close()
+    End Sub
+
+    Private Sub PictureBox14_Click(sender As Object, e As EventArgs) Handles PictureBox14.Click
+        Usuario.Show()
+        Me.Close()
+    End Sub
+
+
+
+    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+        If titulo.Text = "Prazos" Then
+
+
+
+            TextBox2.Visible = True
+
+            If con.State = ConnectionState.Open Then
+                con.Close()
+
+            End If
+            con.Open()
+
+            Dim i As String
+            i = Convert.ToInt32(DataGridView1.SelectedCells.Item(0).Value.ToString())
+
+
+            cmd = con.CreateCommand()
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = "select * from dadosprazos1 where id = '" & i & "'"
+            cmd.ExecuteNonQuery()
+
+            Dim dt As New DataTable()
+            Dim da As New SqlDataAdapter(cmd)
+            da.Fill(dt)
+
+            Dim dr As SqlClient.SqlDataReader
+            dr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+            While dr.Read
+                Consulta.idtxt.Text = dr.GetInt32(0)
+                Consulta.diasprazoud.Text = dr.GetInt32(3)
+                Consulta.dprazofatal.Text = dr.GetString(5).ToString
+                Consulta.ddataprazo.Text = dr.GetString(4).ToString
+                Consulta.respcb.Text = dr.GetString(1).ToString
+                Consulta.partetxt.Text = dr.GetString(7).ToString
+                Consulta.statuscb.Text = dr.GetString(9).ToString
+                Consulta.diltxt.Text = dr.GetString(8).ToString
+                Consulta.textbox2.Text = dr.GetString(6).ToString
+                Consulta.datapubtxt.Text = dr.GetString(2).ToString
+            End While
+
+            Consulta.ShowDialog()
+        End If
+    End Sub
+
 
 End Class

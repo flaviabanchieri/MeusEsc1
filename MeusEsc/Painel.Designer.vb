@@ -22,6 +22,7 @@ Partial Class Painel
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Painel))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -38,13 +39,12 @@ Partial Class Painel
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.DataGridView5 = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -145,6 +145,8 @@ Partial Class Painel
         '
         'DataGridView3
         '
+        Me.DataGridView3.AllowUserToAddRows = False
+        Me.DataGridView3.AllowUserToDeleteRows = False
         Me.DataGridView3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -156,6 +158,7 @@ Partial Class Painel
         Me.DataGridView3.GridColor = System.Drawing.Color.White
         Me.DataGridView3.Location = New System.Drawing.Point(6, 19)
         Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.ReadOnly = True
         Me.DataGridView3.RowHeadersVisible = False
         Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView3.Size = New System.Drawing.Size(347, 334)
@@ -212,6 +215,8 @@ Partial Class Painel
         '
         'DataGridView2
         '
+        Me.DataGridView2.AllowUserToAddRows = False
+        Me.DataGridView2.AllowUserToDeleteRows = False
         Me.DataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -220,11 +225,12 @@ Partial Class Painel
         Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.ColumnHeadersVisible = False
-        Me.DataGridView2.Location = New System.Drawing.Point(6, 35)
+        Me.DataGridView2.Location = New System.Drawing.Point(6, 19)
         Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersVisible = False
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(346, 242)
+        Me.DataGridView2.Size = New System.Drawing.Size(346, 258)
         Me.DataGridView2.TabIndex = 1
         '
         'Label9
@@ -269,7 +275,7 @@ Partial Class Painel
         '
         Me.SplitContainer4.Panel2.Controls.Add(Me.GroupBox5)
         Me.SplitContainer4.Size = New System.Drawing.Size(514, 658)
-        Me.SplitContainer4.SplitterDistance = 465
+        Me.SplitContainer4.SplitterDistance = 442
         Me.SplitContainer4.TabIndex = 0
         '
         'GroupBox1
@@ -279,14 +285,16 @@ Partial Class Painel
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox1.Location = New System.Drawing.Point(1, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(513, 459)
-        Me.GroupBox1.TabIndex = 4
+        Me.GroupBox1.Size = New System.Drawing.Size(513, 436)
+        Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -296,11 +304,12 @@ Partial Class Painel
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DataGridView1.ColumnHeadersHeight = 19
         Me.DataGridView1.GridColor = System.Drawing.Color.White
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 35)
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 19)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(501, 418)
+        Me.DataGridView1.Size = New System.Drawing.Size(501, 411)
         Me.DataGridView1.TabIndex = 1
         '
         'Label2
@@ -318,67 +327,72 @@ Partial Class Painel
         Me.GroupBox5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox5.Controls.Add(Me.Label13)
-        Me.GroupBox5.Controls.Add(Me.Label14)
         Me.GroupBox5.Controls.Add(Me.DataGridView4)
-        Me.GroupBox5.Controls.Add(Me.Label15)
-        Me.GroupBox5.Location = New System.Drawing.Point(2, 3)
+        Me.GroupBox5.Controls.Add(Me.Label10)
+        Me.GroupBox5.Controls.Add(Me.Label11)
+        Me.GroupBox5.Controls.Add(Me.Label13)
+        Me.GroupBox5.Location = New System.Drawing.Point(1, 3)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(509, 183)
+        Me.GroupBox5.Size = New System.Drawing.Size(513, 206)
         Me.GroupBox5.TabIndex = 6
         Me.GroupBox5.TabStop = False
         '
-        'Label13
-        '
-        Me.Label13.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label13.AutoSize = True
-        Me.Label13.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label13.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(636, 10)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(14, 16)
-        Me.Label13.TabIndex = 8
-        Me.Label13.Text = "x"
-        '
-        'Label14
-        '
-        Me.Label14.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label14.AutoSize = True
-        Me.Label14.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(617, 9)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(18, 20)
-        Me.Label14.TabIndex = 7
-        Me.Label14.Text = "+"
-        '
         'DataGridView4
         '
+        Me.DataGridView4.AllowUserToAddRows = False
+        Me.DataGridView4.AllowUserToDeleteRows = False
         Me.DataGridView4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView4.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView4.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.DataGridView4.ColumnHeadersHeight = 19
+        Me.DataGridView4.GridColor = System.Drawing.Color.White
         Me.DataGridView4.Location = New System.Drawing.Point(6, 19)
         Me.DataGridView4.Name = "DataGridView4"
+        Me.DataGridView4.ReadOnly = True
         Me.DataGridView4.RowHeadersVisible = False
         Me.DataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView4.Size = New System.Drawing.Size(497, 158)
-        Me.DataGridView4.TabIndex = 1
+        Me.DataGridView4.Size = New System.Drawing.Size(501, 181)
+        Me.DataGridView4.TabIndex = 2
         '
-        'Label15
+        'Label10
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(6, 0)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(40, 16)
-        Me.Label15.TabIndex = 0
-        Me.Label15.Text = "Hoje"
+        Me.Label10.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label10.AutoSize = True
+        Me.Label10.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(636, 10)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(14, 16)
+        Me.Label10.TabIndex = 8
+        Me.Label10.Text = "x"
+        '
+        'Label11
+        '
+        Me.Label11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label11.AutoSize = True
+        Me.Label11.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(617, 9)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(18, 20)
+        Me.Label11.TabIndex = 7
+        Me.Label11.Text = "+"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(14, 0)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(40, 16)
+        Me.Label13.TabIndex = 0
+        Me.Label13.Text = "Hoje"
         '
         'GroupBox3
         '
@@ -386,7 +400,6 @@ Partial Class Painel
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.DataGridView5)
-        Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.Label12)
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
@@ -398,6 +411,7 @@ Partial Class Painel
         '
         'DataGridView5
         '
+        Me.DataGridView5.AllowUserToAddRows = False
         Me.DataGridView5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -408,24 +422,13 @@ Partial Class Painel
         Me.DataGridView5.ColumnHeadersHeight = 19
         Me.DataGridView5.ColumnHeadersVisible = False
         Me.DataGridView5.GridColor = System.Drawing.Color.White
-        Me.DataGridView5.Location = New System.Drawing.Point(9, 35)
+        Me.DataGridView5.Location = New System.Drawing.Point(9, 32)
         Me.DataGridView5.Name = "DataGridView5"
+        Me.DataGridView5.ReadOnly = True
         Me.DataGridView5.RowHeadersVisible = False
         Me.DataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView5.Size = New System.Drawing.Size(205, 610)
+        Me.DataGridView5.Size = New System.Drawing.Size(205, 613)
         Me.DataGridView5.TabIndex = 2
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(200, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(14, 16)
-        Me.Label1.TabIndex = 10
-        Me.Label1.Text = "x"
         '
         'Label12
         '
@@ -433,7 +436,7 @@ Partial Class Painel
         Me.Label12.AutoSize = True
         Me.Label12.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(183, 12)
+        Me.Label12.Location = New System.Drawing.Point(197, 10)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(18, 20)
         Me.Label12.TabIndex = 9
@@ -483,7 +486,7 @@ Partial Class Painel
         'PictureBox5
         '
         Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox5.Image = Global.MeusEsc.My.Resources.Resources.Sair
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
         Me.PictureBox5.Location = New System.Drawing.Point(0, 656)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(118, 32)
@@ -495,7 +498,7 @@ Partial Class Painel
         'PictureBox4
         '
         Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox4.Image = Global.MeusEsc.My.Resources.Resources.usuario
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
         Me.PictureBox4.Location = New System.Drawing.Point(0, 612)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(118, 38)
@@ -507,8 +510,8 @@ Partial Class Painel
         'PictureBox3
         '
         Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox3.Image = Global.MeusEsc.My.Resources.Resources.menuvoltar
-        Me.PictureBox3.Location = New System.Drawing.Point(80, 33)
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(80, 34)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(42, 38)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -519,8 +522,8 @@ Partial Class Painel
         'PictureBox2
         '
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Image = Global.MeusEsc.My.Resources.Resources.ir
-        Me.PictureBox2.Location = New System.Drawing.Point(4, 33)
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(5, 34)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(42, 38)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -530,8 +533,8 @@ Partial Class Painel
         'agendabtn
         '
         Me.agendabtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.agendabtn.Image = Global.MeusEsc.My.Resources.Resources.Agenda
-        Me.agendabtn.Location = New System.Drawing.Point(3, 122)
+        Me.agendabtn.Image = CType(resources.GetObject("agendabtn.Image"), System.Drawing.Image)
+        Me.agendabtn.Location = New System.Drawing.Point(3, 123)
         Me.agendabtn.Name = "agendabtn"
         Me.agendabtn.Size = New System.Drawing.Size(118, 35)
         Me.agendabtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -542,8 +545,8 @@ Partial Class Painel
         'painelbtn
         '
         Me.painelbtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.painelbtn.Image = Global.MeusEsc.My.Resources.Resources.Painel
-        Me.painelbtn.Location = New System.Drawing.Point(3, 74)
+        Me.painelbtn.Image = CType(resources.GetObject("painelbtn.Image"), System.Drawing.Image)
+        Me.painelbtn.Location = New System.Drawing.Point(3, 75)
         Me.painelbtn.Name = "painelbtn"
         Me.painelbtn.Size = New System.Drawing.Size(118, 38)
         Me.painelbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -553,7 +556,7 @@ Partial Class Painel
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.MeusEsc.My.Resources.Resources.Menu_Open
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(1, -2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(22, 814)
@@ -563,7 +566,7 @@ Partial Class Painel
         '
         'Menu
         '
-        Me.Menu.Image = Global.MeusEsc.My.Resources.Resources.Menu_Open
+        Me.Menu.Image = CType(resources.GetObject("Menu.Image"), System.Drawing.Image)
         Me.Menu.Location = New System.Drawing.Point(-6, -3)
         Me.Menu.Name = "Menu"
         Me.Menu.Size = New System.Drawing.Size(128, 814)
@@ -589,6 +592,7 @@ Partial Class Painel
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.SplitContainer1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(1184, 739)
         Me.MinimumSize = New System.Drawing.Size(1022, 726)
@@ -641,7 +645,6 @@ Partial Class Painel
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents SplitContainer2 As SplitContainer
     Friend WithEvents SplitContainer3 As SplitContainer
-    Friend WithEvents SplitContainer4 As SplitContainer
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label8 As Label
@@ -649,16 +652,7 @@ Partial Class Painel
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents Label9 As Label
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Label2 As Label
-    Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents DataGridView4 As DataGridView
-    Friend WithEvents Label15 As Label
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents DataGridView5 As DataGridView
@@ -674,4 +668,13 @@ Partial Class Painel
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents DataGridView3 As DataGridView
+    Friend WithEvents SplitContainer4 As SplitContainer
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Label2 As Label
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents DataGridView4 As DataGridView
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label13 As Label
 End Class

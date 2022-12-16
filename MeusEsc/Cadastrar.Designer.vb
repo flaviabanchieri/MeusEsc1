@@ -22,6 +22,7 @@ Partial Class Cadastrar
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Cadastrar))
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -40,12 +41,14 @@ Partial Class Cadastrar
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label10
@@ -53,7 +56,7 @@ Partial Class Cadastrar
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label10.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label10.Location = New System.Drawing.Point(488, 245)
+        Me.Label10.Location = New System.Drawing.Point(529, 267)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(18, 13)
         Me.Label10.TabIndex = 85
@@ -203,8 +206,8 @@ Partial Class Cadastrar
         'PictureBox3
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.Image = Global.MeusEsc.My.Resources.Resources.banch
-        Me.PictureBox3.Location = New System.Drawing.Point(526, 230)
+
+        Me.PictureBox3.Location = New System.Drawing.Point(567, 252)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(45, 46)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -213,30 +216,19 @@ Partial Class Cadastrar
         '
         'PictureBox4
         '
-        Me.PictureBox4.Image = Global.MeusEsc.My.Resources.Resources.banch_logo
-        Me.PictureBox4.Location = New System.Drawing.Point(493, 237)
+
+        Me.PictureBox4.Location = New System.Drawing.Point(534, 259)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(41, 23)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 84
         Me.PictureBox4.TabStop = False
         '
-        'PictureBox5
-        '
-        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox5.Image = Global.MeusEsc.My.Resources.Resources.Logo_Lacerda
-        Me.PictureBox5.Location = New System.Drawing.Point(358, 85)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(222, 102)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 82
-        Me.PictureBox5.TabStop = False
-        '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Image = Global.MeusEsc.My.Resources.Resources.Criar
+
         Me.PictureBox1.Location = New System.Drawing.Point(63, 239)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(255, 24)
@@ -244,16 +236,38 @@ Partial Class Cadastrar
         Me.PictureBox1.TabIndex = 72
         Me.PictureBox1.TabStop = False
         '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
+
+        Me.PictureBox5.Location = New System.Drawing.Point(360, 97)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(222, 95)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 87
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
+
+        Me.PictureBox7.Location = New System.Drawing.Point(438, 222)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(110, 104)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 91
+        Me.PictureBox7.TabStop = False
+        '
         'Cadastrar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(629, 310)
+        Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox4)
-        Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.quest)
@@ -270,6 +284,8 @@ Partial Class Cadastrar
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.PictureBox7)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(645, 349)
         Me.MinimumSize = New System.Drawing.Size(645, 349)
@@ -277,8 +293,9 @@ Partial Class Cadastrar
         Me.Text = "Cadastrar"
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -287,7 +304,6 @@ Partial Class Cadastrar
     Friend WithEvents Label10 As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents quest As ComboBox
@@ -304,4 +320,6 @@ Partial Class Cadastrar
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents PictureBox7 As PictureBox
 End Class

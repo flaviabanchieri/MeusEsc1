@@ -28,47 +28,54 @@ Public Class Cadastrar
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
 
 
-        If con.State = ConnectionState.Open Then
-            con.Close()
-
-        End If
-        con.Open()
-
-        'salvar sql
-        Dim strSql As String = ""
-        Dim nome As String
-        Dim usuario As String
-        Dim senha As String
-        Dim cargo As String
-        Dim permissao As String
-        Dim pergunta As String
-        Dim resposta As String
-        Dim data As String
-        nome = nametxt.Text
-        usuario = User.Text
-        senha = pass.Text
-        cargo = charge.Text
-        pergunta = quest.Text
-        resposta = Ans.Text
-        If usuario = "agera" And resposta = "agera" Then
-            permissao = "Administrador"
-        Else
-            permissao = "Usuário"
-        End If
-        data = Convert.ToString(DateAndTime.Now)
+        Try
 
 
 
+            If con.State = ConnectionState.Open Then
+                con.Close()
 
-        cmd = con.CreateCommand()
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = "insert into users(NOME, USUARIO, SENHA, CARGO, PERMISSAO, PERGUNTA, RESPOSTA, CRIACAO) values ('" & nome & "','" & usuario & "','" & senha & "','" & cargo & "','" & permissao & "','" & pergunta & "','" & resposta & "','" & data & "')"
-        cmd.ExecuteNonQuery()
+            End If
+            con.Open()
 
-        MsgBox("Cadastrado, por favor iniciar sessão")
-        Login.Show()
-        Me.Close()
+            'salvar sql
+            Dim strSql As String = ""
+            Dim nome As String
+            Dim usuario As String
+            Dim senha As String
+            Dim cargo As String
+            Dim permissao As String
+            Dim pergunta As String
+            Dim resposta As String
+            Dim data As String
+            nome = nametxt.Text
+            usuario = User.Text
+            senha = pass.Text
+            cargo = charge.Text
+            pergunta = quest.Text
+            resposta = Ans.Text
+            If usuario = "agera" And resposta = "agera" OrElse cargo = "Advogado" OrElse cargo = "Financeiro" Then
+                permissao = "Administrador"
+            Else
+                permissao = "Usuário"
+            End If
+            data = Convert.ToString(DateAndTime.Now)
 
+
+
+
+            cmd = con.CreateCommand()
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = "insert into users(NOME, USUARIO, SENHA, CARGO, PERMISSAO, PERGUNTA, RESPOSTA, CRIACAO) values ('" & nome & "','" & usuario & "','" & senha & "','" & cargo & "','" & permissao & "','" & pergunta & "','" & resposta & "','" & data & "')"
+            cmd.ExecuteNonQuery()
+
+            MsgBox("Cadastrado, por favor iniciar sessão")
+            Login.Show()
+            Me.Close()
+
+        Catch ex As Exception
+            MsgBox("Usuário já cadastrado")
+        End Try
 
 
     End Sub
@@ -92,4 +99,22 @@ Public Class Cadastrar
         Me.Close()
 
     End Sub
+
+    Private Sub Cadastrar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+
+    End Sub
+
+    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
+
+    End Sub
+
+
 End Class

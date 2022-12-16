@@ -841,6 +841,10 @@ Partial Public Class MeuescDataSet
         
         Private columnid_client As Global.System.Data.DataColumn
         
+        Private columnhoramin As Global.System.Data.DataColumn
+        
+        Private columnminuto As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -941,6 +945,22 @@ Partial Public Class MeuescDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property horaminColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnhoramin
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property minutoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnminuto
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -977,9 +997,9 @@ Partial Public Class MeuescDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddAtendimentoRow(ByVal Data As String, ByVal Parte As String, ByVal Processo As String, ByVal Hora As System.TimeSpan, ByVal anotacao As String, ByVal id_proc As Integer, ByVal id_client As Integer) As AtendimentoRow
+        Public Overloads Function AddAtendimentoRow(ByVal Data As String, ByVal Parte As String, ByVal Processo As String, ByVal Hora As System.TimeSpan, ByVal anotacao As String, ByVal id_proc As Integer, ByVal id_client As Integer, ByVal horamin As Integer, ByVal minuto As Integer) As AtendimentoRow
             Dim rowAtendimentoRow As AtendimentoRow = CType(Me.NewRow,AtendimentoRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Data, Parte, Processo, Hora, anotacao, id_proc, id_client}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Data, Parte, Processo, Hora, anotacao, id_proc, id_client, horamin, minuto}
             rowAtendimentoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowAtendimentoRow)
             Return rowAtendimentoRow
@@ -1016,6 +1036,8 @@ Partial Public Class MeuescDataSet
             Me.columnanotacao = MyBase.Columns("anotacao")
             Me.columnid_proc = MyBase.Columns("id_proc")
             Me.columnid_client = MyBase.Columns("id_client")
+            Me.columnhoramin = MyBase.Columns("horamin")
+            Me.columnminuto = MyBase.Columns("minuto")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1037,6 +1059,10 @@ Partial Public Class MeuescDataSet
             MyBase.Columns.Add(Me.columnid_proc)
             Me.columnid_client = New Global.System.Data.DataColumn("id_client", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnid_client)
+            Me.columnhoramin = New Global.System.Data.DataColumn("horamin", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnhoramin)
+            Me.columnminuto = New Global.System.Data.DataColumn("minuto", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnminuto)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = -1
@@ -1055,6 +1081,8 @@ Partial Public Class MeuescDataSet
             Me.columnanotacao.MaxLength = 1150
             Me.columnid_proc.AllowDBNull = false
             Me.columnid_client.AllowDBNull = false
+            Me.columnhoramin.AllowDBNull = false
+            Me.columnminuto.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1212,6 +1240,10 @@ Partial Public Class MeuescDataSet
         
         Private columnId_proc As Global.System.Data.DataColumn
         
+        Private columnhoramin As Global.System.Data.DataColumn
+        
+        Private columnminuto As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -1328,6 +1360,22 @@ Partial Public Class MeuescDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property horaminColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnhoramin
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property minutoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnminuto
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1364,9 +1412,9 @@ Partial Public Class MeuescDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddAudienciasRow(ByVal Data As String, ByVal Responsavel As String, ByVal Vara As String, ByVal Parte As String, ByVal Processo As String, ByVal Hora As System.TimeSpan, ByVal Sala As String, ByVal anotacao As String, ByVal Id_proc As Integer) As AudienciasRow
+        Public Overloads Function AddAudienciasRow(ByVal Data As String, ByVal Responsavel As String, ByVal Vara As String, ByVal Parte As String, ByVal Processo As String, ByVal Hora As System.TimeSpan, ByVal Sala As String, ByVal anotacao As String, ByVal Id_proc As Integer, ByVal horamin As Integer, ByVal minuto As Integer) As AudienciasRow
             Dim rowAudienciasRow As AudienciasRow = CType(Me.NewRow,AudienciasRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Data, Responsavel, Vara, Parte, Processo, Hora, Sala, anotacao, Id_proc}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Data, Responsavel, Vara, Parte, Processo, Hora, Sala, anotacao, Id_proc, horamin, minuto}
             rowAudienciasRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowAudienciasRow)
             Return rowAudienciasRow
@@ -1405,6 +1453,8 @@ Partial Public Class MeuescDataSet
             Me.columnSala = MyBase.Columns("Sala")
             Me.columnanotacao = MyBase.Columns("anotacao")
             Me.columnId_proc = MyBase.Columns("Id_proc")
+            Me.columnhoramin = MyBase.Columns("horamin")
+            Me.columnminuto = MyBase.Columns("minuto")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1430,6 +1480,10 @@ Partial Public Class MeuescDataSet
             MyBase.Columns.Add(Me.columnanotacao)
             Me.columnId_proc = New Global.System.Data.DataColumn("Id_proc", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnId_proc)
+            Me.columnhoramin = New Global.System.Data.DataColumn("horamin", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnhoramin)
+            Me.columnminuto = New Global.System.Data.DataColumn("minuto", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnminuto)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = -1
@@ -1451,6 +1505,8 @@ Partial Public Class MeuescDataSet
             Me.columnSala.AllowDBNull = false
             Me.columnSala.MaxLength = 100
             Me.columnanotacao.MaxLength = 1550
+            Me.columnhoramin.AllowDBNull = false
+            Me.columnminuto.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2913,6 +2969,28 @@ Partial Public Class MeuescDataSet
                 Me(Me.tableAtendimento.id_clientColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property horamin() As Integer
+            Get
+                Return CType(Me(Me.tableAtendimento.horaminColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableAtendimento.horaminColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property minuto() As Integer
+            Get
+                Return CType(Me(Me.tableAtendimento.minutoColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableAtendimento.minutoColumn) = value
+            End Set
+        End Property
     End Class
     
     '''<summary>
@@ -3045,6 +3123,28 @@ Partial Public Class MeuescDataSet
             End Get
             Set
                 Me(Me.tableAudiencias.Id_procColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property horamin() As Integer
+            Get
+                Return CType(Me(Me.tableAudiencias.horaminColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableAudiencias.horaminColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property minuto() As Integer
+            Get
+                Return CType(Me(Me.tableAudiencias.minutoColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableAudiencias.minutoColumn) = value
             End Set
         End Property
         
@@ -4302,61 +4402,75 @@ Namespace MeuescDataSetTableAdapters
             tableMapping.ColumnMappings.Add("anotacao", "anotacao")
             tableMapping.ColumnMappings.Add("id_proc", "id_proc")
             tableMapping.ColumnMappings.Add("id_client", "id_client")
+            tableMapping.ColumnMappings.Add("horamin", "horamin")
+            tableMapping.ColumnMappings.Add("minuto", "minuto")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Atendimento] WHERE (([Id] = @Original_Id) AND ([Data] = @Origi"& _ 
-                "nal_Data) AND ([Parte] = @Original_Parte) AND ([Processo] = @Original_Processo) "& _ 
-                "AND ([Hora] = @Original_Hora) AND ([anotacao] = @Original_anotacao) AND ([id_pro"& _ 
-                "c] = @Original_id_proc) AND ([id_client] = @Original_id_client))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Atendimento] WHERE (([Id] = @Original_Id) AND ([Data] = @Original_Da"& _ 
+                "ta) AND ([Parte] = @Original_Parte) AND ([Processo] = @Original_Processo) AND (["& _ 
+                "Hora] = @Original_Hora) AND ([anotacao] = @Original_anotacao) AND ([id_proc] = @"& _ 
+                "Original_id_proc) AND ([id_client] = @Original_id_client) AND ([horamin] = @Orig"& _ 
+                "inal_horamin) AND ([minuto] = @Original_minuto))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Data", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Data", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Parte", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Parte", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Processo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Processo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Hora", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Hora", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_anotacao", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "anotacao", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_proc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_proc", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_client", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_client", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_horamin", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horamin", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_minuto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minuto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Atendimento] ([Data], [Parte], [Processo], [Hora], [anotacao],"& _ 
-                " [id_proc], [id_client]) VALUES (@Data, @Parte, @Processo, @Hora, @anotacao, @id"& _ 
-                "_proc, @id_client);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Data, Parte, Processo, Hora, anotacao, id_proc, "& _ 
-                "id_client FROM Atendimento WHERE (Id = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Atendimento] ([Data], [Parte], [Processo], [Hora], [anotacao], [id_p"& _ 
+                "roc], [id_client], [horamin], [minuto]) VALUES (@Data, @Parte, @Processo, @Hora,"& _ 
+                " @anotacao, @id_proc, @id_client, @horamin, @minuto);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Data, Parte, P"& _ 
+                "rocesso, Hora, anotacao, id_proc, id_client, horamin, minuto FROM Atendimento WH"& _ 
+                "ERE (Id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Data", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Data", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Parte", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Parte", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Processo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Processo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Hora", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Hora", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@anotacao", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "anotacao", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_proc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_proc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_client", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_client", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@horamin", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horamin", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@minuto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minuto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Atendimento] SET [Data] = @Data, [Parte] = @Parte, [Processo] = @Pr"& _ 
-                "ocesso, [Hora] = @Hora, [anotacao] = @anotacao, [id_proc] = @id_proc, [id_client"& _ 
-                "] = @id_client WHERE (([Id] = @Original_Id) AND ([Data] = @Original_Data) AND (["& _ 
-                "Parte] = @Original_Parte) AND ([Processo] = @Original_Processo) AND ([Hora] = @O"& _ 
-                "riginal_Hora) AND ([anotacao] = @Original_anotacao) AND ([id_proc] = @Original_i"& _ 
-                "d_proc) AND ([id_client] = @Original_id_client));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Data, Parte, Proce"& _ 
-                "sso, Hora, anotacao, id_proc, id_client FROM Atendimento WHERE (Id = @Id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Atendimento] SET [Data] = @Data, [Parte] = @Parte, [Processo] = @Processo"& _ 
+                ", [Hora] = @Hora, [anotacao] = @anotacao, [id_proc] = @id_proc, [id_client] = @i"& _ 
+                "d_client, [horamin] = @horamin, [minuto] = @minuto WHERE (([Id] = @Original_Id) "& _ 
+                "AND ([Data] = @Original_Data) AND ([Parte] = @Original_Parte) AND ([Processo] = "& _ 
+                "@Original_Processo) AND ([Hora] = @Original_Hora) AND ([anotacao] = @Original_an"& _ 
+                "otacao) AND ([id_proc] = @Original_id_proc) AND ([id_client] = @Original_id_clie"& _ 
+                "nt) AND ([horamin] = @Original_horamin) AND ([minuto] = @Original_minuto));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SEL"& _ 
+                "ECT Id, Data, Parte, Processo, Hora, anotacao, id_proc, id_client, horamin, minu"& _ 
+                "to FROM Atendimento WHERE (Id = @Id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Data", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Data", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Parte", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Parte", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Processo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Processo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Hora", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Hora", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@anotacao", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "anotacao", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_proc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_proc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_client", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_client", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@horamin", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horamin", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@minuto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minuto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Data", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Data", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Parte", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Parte", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Processo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Processo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Hora", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Hora", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_anotacao", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "anotacao", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_proc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_proc", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_client", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_client", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_horamin", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horamin", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_minuto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minuto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -4373,8 +4487,8 @@ Namespace MeuescDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT Id, Data, Parte, Processo, Hora, anotacao, id_proc, id_client FROM dbo.Ate"& _ 
-                "ndimento"
+            Me._commandCollection(0).CommandText = "SELECT Id, Data, Parte, Processo, Hora, anotacao, id_proc, id_client, horamin, mi"& _ 
+                "nuto FROM Atendimento"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -4434,7 +4548,7 @@ Namespace MeuescDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_Data As String, ByVal Original_Parte As String, ByVal Original_Processo As String, ByVal Original_Hora As System.TimeSpan, ByVal Original_anotacao As String, ByVal Original_id_proc As Integer, ByVal Original_id_client As Integer) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_Data As String, ByVal Original_Parte As String, ByVal Original_Processo As String, ByVal Original_Hora As String, ByVal Original_anotacao As String, ByVal Original_id_proc As Integer, ByVal Original_id_client As Integer, ByVal Original_horamin As Integer, ByVal Original_minuto As Integer) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
             If (Original_Data Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Data")
@@ -4451,7 +4565,11 @@ Namespace MeuescDataSetTableAdapters
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_Processo,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Hora,System.TimeSpan)
+            If (Original_Hora Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Hora")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Hora,String)
+            End If
             If (Original_anotacao Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_anotacao")
             Else
@@ -4459,6 +4577,8 @@ Namespace MeuescDataSetTableAdapters
             End If
             Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_id_proc,Integer)
             Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_id_client,Integer)
+            Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_horamin,Integer)
+            Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_minuto,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4478,7 +4598,7 @@ Namespace MeuescDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Data As String, ByVal Parte As String, ByVal Processo As String, ByVal Hora As System.TimeSpan, ByVal anotacao As String, ByVal id_proc As Integer, ByVal id_client As Integer) As Integer
+        Public Overloads Overridable Function Insert(ByVal Data As String, ByVal Parte As String, ByVal Processo As String, ByVal Hora As String, ByVal anotacao As String, ByVal id_proc As Integer, ByVal id_client As Integer, ByVal horamin As Integer, ByVal minuto As Integer) As Integer
             If (Data Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Data")
             Else
@@ -4494,7 +4614,11 @@ Namespace MeuescDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(Processo,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(3).Value = CType(Hora,System.TimeSpan)
+            If (Hora Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Hora")
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Hora,String)
+            End If
             If (anotacao Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("anotacao")
             Else
@@ -4502,6 +4626,8 @@ Namespace MeuescDataSetTableAdapters
             End If
             Me.Adapter.InsertCommand.Parameters(5).Value = CType(id_proc,Integer)
             Me.Adapter.InsertCommand.Parameters(6).Value = CType(id_client,Integer)
+            Me.Adapter.InsertCommand.Parameters(7).Value = CType(horamin,Integer)
+            Me.Adapter.InsertCommand.Parameters(8).Value = CType(minuto,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4525,18 +4651,22 @@ Namespace MeuescDataSetTableAdapters
                     ByVal Data As String,  _
                     ByVal Parte As String,  _
                     ByVal Processo As String,  _
-                    ByVal Hora As System.TimeSpan,  _
+                    ByVal Hora As String,  _
                     ByVal anotacao As String,  _
                     ByVal id_proc As Integer,  _
                     ByVal id_client As Integer,  _
+                    ByVal horamin As Integer,  _
+                    ByVal minuto As Integer,  _
                     ByVal Original_Id As Integer,  _
                     ByVal Original_Data As String,  _
                     ByVal Original_Parte As String,  _
                     ByVal Original_Processo As String,  _
-                    ByVal Original_Hora As System.TimeSpan,  _
+                    ByVal Original_Hora As String,  _
                     ByVal Original_anotacao As String,  _
                     ByVal Original_id_proc As Integer,  _
                     ByVal Original_id_client As Integer,  _
+                    ByVal Original_horamin As Integer,  _
+                    ByVal Original_minuto As Integer,  _
                     ByVal Id As Integer) As Integer
             If (Data Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Data")
@@ -4553,7 +4683,11 @@ Namespace MeuescDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Processo,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Hora,System.TimeSpan)
+            If (Hora Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Hora")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Hora,String)
+            End If
             If (anotacao Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("anotacao")
             Else
@@ -4561,31 +4695,39 @@ Namespace MeuescDataSetTableAdapters
             End If
             Me.Adapter.UpdateCommand.Parameters(5).Value = CType(id_proc,Integer)
             Me.Adapter.UpdateCommand.Parameters(6).Value = CType(id_client,Integer)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Id,Integer)
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(horamin,Integer)
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(minuto,Integer)
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Id,Integer)
             If (Original_Data Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Data")
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Data,String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Data,String)
             End If
             If (Original_Parte Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Parte")
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Parte,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Parte,String)
             End If
             If (Original_Processo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Processo")
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Processo,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Processo,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Hora,System.TimeSpan)
+            If (Original_Hora Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Hora")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Hora,String)
+            End If
             If (Original_anotacao Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_anotacao")
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_anotacao,String)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_anotacao,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_id_proc,Integer)
-            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_id_client,Integer)
-            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Id,Integer)
+            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_id_proc,Integer)
+            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_id_client,Integer)
+            Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_horamin,Integer)
+            Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_minuto,Integer)
+            Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Id,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4605,8 +4747,27 @@ Namespace MeuescDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Data As String, ByVal Parte As String, ByVal Processo As String, ByVal Hora As System.TimeSpan, ByVal anotacao As String, ByVal id_proc As Integer, ByVal id_client As Integer, ByVal Original_Id As Integer, ByVal Original_Data As String, ByVal Original_Parte As String, ByVal Original_Processo As String, ByVal Original_Hora As System.TimeSpan, ByVal Original_anotacao As String, ByVal Original_id_proc As Integer, ByVal Original_id_client As Integer) As Integer
-            Return Me.Update(Data, Parte, Processo, Hora, anotacao, id_proc, id_client, Original_Id, Original_Data, Original_Parte, Original_Processo, Original_Hora, Original_anotacao, Original_id_proc, Original_id_client, Original_Id)
+        Public Overloads Overridable Function Update( _
+                    ByVal Data As String,  _
+                    ByVal Parte As String,  _
+                    ByVal Processo As String,  _
+                    ByVal Hora As String,  _
+                    ByVal anotacao As String,  _
+                    ByVal id_proc As Integer,  _
+                    ByVal id_client As Integer,  _
+                    ByVal horamin As Integer,  _
+                    ByVal minuto As Integer,  _
+                    ByVal Original_Id As Integer,  _
+                    ByVal Original_Data As String,  _
+                    ByVal Original_Parte As String,  _
+                    ByVal Original_Processo As String,  _
+                    ByVal Original_Hora As String,  _
+                    ByVal Original_anotacao As String,  _
+                    ByVal Original_id_proc As Integer,  _
+                    ByVal Original_id_client As Integer,  _
+                    ByVal Original_horamin As Integer,  _
+                    ByVal Original_minuto As Integer) As Integer
+            Return Me.Update(Data, Parte, Processo, Hora, anotacao, id_proc, id_client, horamin, minuto, Original_Id, Original_Data, Original_Parte, Original_Processo, Original_Hora, Original_anotacao, Original_id_proc, Original_id_client, Original_horamin, Original_minuto, Original_Id)
         End Function
     End Class
     
@@ -4747,15 +4908,18 @@ Namespace MeuescDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Sala", "Sala")
             tableMapping.ColumnMappings.Add("anotacao", "anotacao")
             tableMapping.ColumnMappings.Add("Id_proc", "Id_proc")
+            tableMapping.ColumnMappings.Add("horamin", "horamin")
+            tableMapping.ColumnMappings.Add("minuto", "minuto")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Audiencias] WHERE (([Id] = @Original_Id) AND ([Data] = @Origin"& _ 
-                "al_Data) AND ([Responsavel] = @Original_Responsavel) AND ([Vara] = @Original_Var"& _ 
-                "a) AND ([Parte] = @Original_Parte) AND ([Processo] = @Original_Processo) AND ([H"& _ 
-                "ora] = @Original_Hora) AND ([Sala] = @Original_Sala) AND ((@IsNull_anotacao = 1 "& _ 
-                "AND [anotacao] IS NULL) OR ([anotacao] = @Original_anotacao)) AND ((@IsNull_Id_p"& _ 
-                "roc = 1 AND [Id_proc] IS NULL) OR ([Id_proc] = @Original_Id_proc)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Audiencias] WHERE (([Id] = @Original_Id) AND ([Data] = @Original_Dat"& _ 
+                "a) AND ([Responsavel] = @Original_Responsavel) AND ([Vara] = @Original_Vara) AND"& _ 
+                " ([Parte] = @Original_Parte) AND ([Processo] = @Original_Processo) AND ([Hora] ="& _ 
+                " @Original_Hora) AND ([Sala] = @Original_Sala) AND ((@IsNull_anotacao = 1 AND [a"& _ 
+                "notacao] IS NULL) OR ([anotacao] = @Original_anotacao)) AND ((@IsNull_Id_proc = "& _ 
+                "1 AND [Id_proc] IS NULL) OR ([Id_proc] = @Original_Id_proc)) AND ([horamin] = @O"& _ 
+                "riginal_horamin) AND ([minuto] = @Original_minuto))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Data", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Data", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -4763,63 +4927,73 @@ Namespace MeuescDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Vara", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Vara", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Parte", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Parte", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Processo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Processo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Hora", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Hora", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Sala", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Sala", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_anotacao", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "anotacao", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_anotacao", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "anotacao", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Id_proc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_proc", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id_proc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_proc", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_horamin", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horamin", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_minuto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minuto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Audiencias] ([Data], [Responsavel], [Vara], [Parte], [Processo"& _ 
-                "], [Hora], [Sala], [anotacao], [Id_proc]) VALUES (@Data, @Responsavel, @Vara, @P"& _ 
-                "arte, @Processo, @Hora, @Sala, @anotacao, @Id_proc);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Data, Responsav"& _ 
-                "el, Vara, Parte, Processo, Hora, Sala, anotacao, Id_proc FROM Audiencias WHERE ("& _ 
-                "Id = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Audiencias] ([Data], [Responsavel], [Vara], [Parte], [Processo], [Ho"& _ 
+                "ra], [Sala], [anotacao], [Id_proc], [horamin], [minuto]) VALUES (@Data, @Respons"& _ 
+                "avel, @Vara, @Parte, @Processo, @Hora, @Sala, @anotacao, @Id_proc, @horamin, @mi"& _ 
+                "nuto);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Data, Responsavel, Vara, Parte, Processo, Hora, Sala, anotaca"& _ 
+                "o, Id_proc, horamin, minuto FROM Audiencias WHERE (Id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Data", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Data", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Responsavel", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Responsavel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Vara", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Vara", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Parte", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Parte", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Processo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Processo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Hora", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Hora", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Sala", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Sala", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@anotacao", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "anotacao", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_proc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_proc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@horamin", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horamin", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@minuto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minuto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Audiencias] SET [Data] = @Data, [Responsavel] = @Responsavel, [Vara"& _ 
-                "] = @Vara, [Parte] = @Parte, [Processo] = @Processo, [Hora] = @Hora, [Sala] = @S"& _ 
-                "ala, [anotacao] = @anotacao, [Id_proc] = @Id_proc WHERE (([Id] = @Original_Id) A"& _ 
-                "ND ([Data] = @Original_Data) AND ([Responsavel] = @Original_Responsavel) AND ([V"& _ 
-                "ara] = @Original_Vara) AND ([Parte] = @Original_Parte) AND ([Processo] = @Origin"& _ 
-                "al_Processo) AND ([Hora] = @Original_Hora) AND ([Sala] = @Original_Sala) AND ((@"& _ 
-                "IsNull_anotacao = 1 AND [anotacao] IS NULL) OR ([anotacao] = @Original_anotacao)"& _ 
-                ") AND ((@IsNull_Id_proc = 1 AND [Id_proc] IS NULL) OR ([Id_proc] = @Original_Id_"& _ 
-                "proc)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Data, Responsavel, Vara, Parte, Processo, Hora, Sala, anota"& _ 
-                "cao, Id_proc FROM Audiencias WHERE (Id = @Id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Audiencias] SET [Data] = @Data, [Responsavel] = @Responsavel, [Vara] = @V"& _ 
+                "ara, [Parte] = @Parte, [Processo] = @Processo, [Hora] = @Hora, [Sala] = @Sala, ["& _ 
+                "anotacao] = @anotacao, [Id_proc] = @Id_proc, [horamin] = @horamin, [minuto] = @m"& _ 
+                "inuto WHERE (([Id] = @Original_Id) AND ([Data] = @Original_Data) AND ([Responsav"& _ 
+                "el] = @Original_Responsavel) AND ([Vara] = @Original_Vara) AND ([Parte] = @Origi"& _ 
+                "nal_Parte) AND ([Processo] = @Original_Processo) AND ([Hora] = @Original_Hora) A"& _ 
+                "ND ([Sala] = @Original_Sala) AND ((@IsNull_anotacao = 1 AND [anotacao] IS NULL) "& _ 
+                "OR ([anotacao] = @Original_anotacao)) AND ((@IsNull_Id_proc = 1 AND [Id_proc] IS"& _ 
+                " NULL) OR ([Id_proc] = @Original_Id_proc)) AND ([horamin] = @Original_horamin) A"& _ 
+                "ND ([minuto] = @Original_minuto));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, Data, Responsavel, Vara, Parte, P"& _ 
+                "rocesso, Hora, Sala, anotacao, Id_proc, horamin, minuto FROM Audiencias WHERE (I"& _ 
+                "d = @Id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Data", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Data", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Responsavel", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Responsavel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Vara", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Vara", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Parte", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Parte", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Processo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Processo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Hora", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Hora", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Sala", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Sala", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@anotacao", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "anotacao", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_proc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_proc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@horamin", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horamin", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@minuto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minuto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Data", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Data", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Responsavel", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Responsavel", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Vara", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Vara", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Parte", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Parte", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Processo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Processo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Hora", Global.System.Data.SqlDbType.Time, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Hora", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hora", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Sala", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Sala", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_anotacao", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "anotacao", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_anotacao", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "anotacao", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Id_proc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_proc", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id_proc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_proc", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_horamin", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "horamin", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_minuto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "minuto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -4837,7 +5011,7 @@ Namespace MeuescDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT Id, Data, Responsavel, Vara, Parte, Processo, Hora, Sala, anotacao, Id_pro"& _ 
-                "c FROM dbo.Audiencias"
+                "c, horamin, minuto FROM Audiencias"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -4897,7 +5071,7 @@ Namespace MeuescDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_Data As String, ByVal Original_Responsavel As String, ByVal Original_Vara As String, ByVal Original_Parte As String, ByVal Original_Processo As String, ByVal Original_Hora As System.TimeSpan, ByVal Original_Sala As String, ByVal Original_anotacao As String, ByVal Original_Id_proc As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_Data As String, ByVal Original_Responsavel As String, ByVal Original_Vara As String, ByVal Original_Parte As String, ByVal Original_Processo As String, ByVal Original_Hora As String, ByVal Original_Sala As String, ByVal Original_anotacao As String, ByVal Original_Id_proc As Global.System.Nullable(Of Integer), ByVal Original_horamin As Integer, ByVal Original_minuto As Integer) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
             If (Original_Data Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Data")
@@ -4924,7 +5098,11 @@ Namespace MeuescDataSetTableAdapters
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_Processo,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Hora,System.TimeSpan)
+            If (Original_Hora Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Hora")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Hora,String)
+            End If
             If (Original_Sala Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Sala")
             Else
@@ -4944,6 +5122,8 @@ Namespace MeuescDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
+            Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_horamin,Integer)
+            Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_minuto,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4963,7 +5143,7 @@ Namespace MeuescDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Data As String, ByVal Responsavel As String, ByVal Vara As String, ByVal Parte As String, ByVal Processo As String, ByVal Hora As System.TimeSpan, ByVal Sala As String, ByVal anotacao As String, ByVal Id_proc As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Insert(ByVal Data As String, ByVal Responsavel As String, ByVal Vara As String, ByVal Parte As String, ByVal Processo As String, ByVal Hora As String, ByVal Sala As String, ByVal anotacao As String, ByVal Id_proc As Global.System.Nullable(Of Integer), ByVal horamin As Integer, ByVal minuto As Integer) As Integer
             If (Data Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Data")
             Else
@@ -4989,7 +5169,11 @@ Namespace MeuescDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = CType(Processo,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(5).Value = CType(Hora,System.TimeSpan)
+            If (Hora Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Hora")
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Hora,String)
+            End If
             If (Sala Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Sala")
             Else
@@ -5005,6 +5189,8 @@ Namespace MeuescDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
+            Me.Adapter.InsertCommand.Parameters(9).Value = CType(horamin,Integer)
+            Me.Adapter.InsertCommand.Parameters(10).Value = CType(minuto,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5030,20 +5216,24 @@ Namespace MeuescDataSetTableAdapters
                     ByVal Vara As String,  _
                     ByVal Parte As String,  _
                     ByVal Processo As String,  _
-                    ByVal Hora As System.TimeSpan,  _
+                    ByVal Hora As String,  _
                     ByVal Sala As String,  _
                     ByVal anotacao As String,  _
                     ByVal Id_proc As Global.System.Nullable(Of Integer),  _
+                    ByVal horamin As Integer,  _
+                    ByVal minuto As Integer,  _
                     ByVal Original_Id As Integer,  _
                     ByVal Original_Data As String,  _
                     ByVal Original_Responsavel As String,  _
                     ByVal Original_Vara As String,  _
                     ByVal Original_Parte As String,  _
                     ByVal Original_Processo As String,  _
-                    ByVal Original_Hora As System.TimeSpan,  _
+                    ByVal Original_Hora As String,  _
                     ByVal Original_Sala As String,  _
                     ByVal Original_anotacao As String,  _
                     ByVal Original_Id_proc As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_horamin As Integer,  _
+                    ByVal Original_minuto As Integer,  _
                     ByVal Id As Integer) As Integer
             If (Data Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Data")
@@ -5070,7 +5260,11 @@ Namespace MeuescDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Processo,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Hora,System.TimeSpan)
+            If (Hora Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Hora")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Hora,String)
+            End If
             If (Sala Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Sala")
             Else
@@ -5086,53 +5280,61 @@ Namespace MeuescDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Id,Integer)
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(horamin,Integer)
+            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(minuto,Integer)
+            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Id,Integer)
             If (Original_Data Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Data")
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Data,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Data,String)
             End If
             If (Original_Responsavel Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Responsavel")
             Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Responsavel,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Responsavel,String)
             End If
             If (Original_Vara Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Vara")
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Vara,String)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Vara,String)
             End If
             If (Original_Parte Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Parte")
             Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Parte,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Parte,String)
             End If
             If (Original_Processo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Processo")
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Processo,String)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_Processo,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Hora,System.TimeSpan)
+            If (Original_Hora Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Hora")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Hora,String)
+            End If
             If (Original_Sala Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_Sala")
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_Sala,String)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_Sala,String)
             End If
             If (Original_anotacao Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_anotacao,String)
-            End If
-            If (Original_Id_proc.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_Id_proc.Value,Integer)
-            Else
                 Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_anotacao,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Id,Integer)
+            If (Original_Id_proc.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_Id_proc.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_horamin,Integer)
+            Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_minuto,Integer)
+            Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Id,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5158,21 +5360,25 @@ Namespace MeuescDataSetTableAdapters
                     ByVal Vara As String,  _
                     ByVal Parte As String,  _
                     ByVal Processo As String,  _
-                    ByVal Hora As System.TimeSpan,  _
+                    ByVal Hora As String,  _
                     ByVal Sala As String,  _
                     ByVal anotacao As String,  _
                     ByVal Id_proc As Global.System.Nullable(Of Integer),  _
+                    ByVal horamin As Integer,  _
+                    ByVal minuto As Integer,  _
                     ByVal Original_Id As Integer,  _
                     ByVal Original_Data As String,  _
                     ByVal Original_Responsavel As String,  _
                     ByVal Original_Vara As String,  _
                     ByVal Original_Parte As String,  _
                     ByVal Original_Processo As String,  _
-                    ByVal Original_Hora As System.TimeSpan,  _
+                    ByVal Original_Hora As String,  _
                     ByVal Original_Sala As String,  _
                     ByVal Original_anotacao As String,  _
-                    ByVal Original_Id_proc As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(Data, Responsavel, Vara, Parte, Processo, Hora, Sala, anotacao, Id_proc, Original_Id, Original_Data, Original_Responsavel, Original_Vara, Original_Parte, Original_Processo, Original_Hora, Original_Sala, Original_anotacao, Original_Id_proc, Original_Id)
+                    ByVal Original_Id_proc As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_horamin As Integer,  _
+                    ByVal Original_minuto As Integer) As Integer
+            Return Me.Update(Data, Responsavel, Vara, Parte, Processo, Hora, Sala, anotacao, Id_proc, horamin, minuto, Original_Id, Original_Data, Original_Responsavel, Original_Vara, Original_Parte, Original_Processo, Original_Hora, Original_Sala, Original_anotacao, Original_Id_proc, Original_horamin, Original_minuto, Original_Id)
         End Function
     End Class
     

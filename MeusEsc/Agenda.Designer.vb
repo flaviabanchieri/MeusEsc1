@@ -22,13 +22,16 @@ Partial Class Agenda
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Agenda))
         Me.Agendados = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.titulo = New System.Windows.Forms.Label()
         Me.responsaveltxt = New System.Windows.Forms.ComboBox()
         Me.situacao = New System.Windows.Forms.ComboBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Printtxt = New System.Windows.Forms.Button()
@@ -69,30 +72,6 @@ Partial Class Agenda
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AgendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PrazoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AudienciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AtendimentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProvidênciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AdicionarPrazoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PrazoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AudiênciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AtendimentoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProvidênciasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox15 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox16 = New System.Windows.Forms.PictureBox()
-        Me.agendabtn = New System.Windows.Forms.PictureBox()
-        Me.painelbtn = New System.Windows.Forms.PictureBox()
-        Me.PictureBox17 = New System.Windows.Forms.PictureBox()
-        Me.Menu = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.PictureBox13 = New System.Windows.Forms.PictureBox()
@@ -103,8 +82,31 @@ Partial Class Agenda
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.PictureBox18 = New System.Windows.Forms.PictureBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrazoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AudienciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AtendimentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProvidênciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdicionarPrazoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrazoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AudiênciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProvidênciasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AtendimentoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox15 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox16 = New System.Windows.Forms.PictureBox()
+        Me.agendabtn = New System.Windows.Forms.PictureBox()
+        Me.painelbtn = New System.Windows.Forms.PictureBox()
+        Me.PictureBox17 = New System.Windows.Forms.PictureBox()
+        Me.Menu = New System.Windows.Forms.PictureBox()
         Me.Agendados.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
         CType(Me.domingo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,18 +116,6 @@ Partial Class Agenda
         CType(Me.quarta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.terca, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.segunda, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.agendabtn, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.painelbtn, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Menu, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -136,6 +126,15 @@ Partial Class Agenda
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.agendabtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.painelbtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Menu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Agendados
@@ -166,7 +165,6 @@ Partial Class Agenda
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Printtxt)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Controls.Add(Me.PictureBox8)
         Me.TabPage1.Controls.Add(Me.DataGridView1)
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.datapick)
@@ -230,6 +228,20 @@ Partial Class Agenda
         Me.situacao.Size = New System.Drawing.Size(192, 21)
         Me.situacao.TabIndex = 30
         '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(276, 18)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(22, 23)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 49
+        Me.PictureBox3.TabStop = False
+        '
         'Label5
         '
         Me.Label5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -241,6 +253,20 @@ Partial Class Agenda
         Me.Label5.Size = New System.Drawing.Size(37, 13)
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Status"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(225, 18)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(22, 23)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 48
+        Me.PictureBox2.TabStop = False
         '
         'Label4
         '
@@ -829,6 +855,105 @@ Partial Class Agenda
         Me.Label29.Text = "SEGUNDA-FEIRA"
         Me.Label29.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'PictureBox5
+        '
+        Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox5.Location = New System.Drawing.Point(71, 9)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(22, 20)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 52
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox6.Location = New System.Drawing.Point(20, 9)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(22, 20)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 51
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox13
+        '
+        Me.PictureBox13.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox13.Location = New System.Drawing.Point(975, 44)
+        Me.PictureBox13.Name = "PictureBox13"
+        Me.PictureBox13.Size = New System.Drawing.Size(167, 624)
+        Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox13.TabIndex = 63
+        Me.PictureBox13.TabStop = False
+        '
+        'PictureBox12
+        '
+        Me.PictureBox12.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox12.Location = New System.Drawing.Point(812, 44)
+        Me.PictureBox12.Name = "PictureBox12"
+        Me.PictureBox12.Size = New System.Drawing.Size(167, 624)
+        Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox12.TabIndex = 62
+        Me.PictureBox12.TabStop = False
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox10.Location = New System.Drawing.Point(652, 44)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(163, 624)
+        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox10.TabIndex = 61
+        Me.PictureBox10.TabStop = False
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox9.Location = New System.Drawing.Point(488, 44)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(167, 624)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 60
+        Me.PictureBox9.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox7.Location = New System.Drawing.Point(324, 44)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(167, 624)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 59
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox4.Location = New System.Drawing.Point(161, 44)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(167, 624)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 58
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox11
+        '
+        Me.PictureBox11.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox11.Location = New System.Drawing.Point(-2, 44)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(167, 624)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox11.TabIndex = 57
+        Me.PictureBox11.TabStop = False
+        '
+        'PictureBox18
+        '
+        Me.PictureBox18.Location = New System.Drawing.Point(489, 42)
+        Me.PictureBox18.Name = "PictureBox18"
+        Me.PictureBox18.Size = New System.Drawing.Size(165, 614)
+        Me.PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox18.TabIndex = 177
+        Me.PictureBox18.TabStop = False
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
@@ -878,7 +1003,7 @@ Partial Class Agenda
         '
         'AdicionarPrazoToolStripMenuItem
         '
-        Me.AdicionarPrazoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrazoToolStripMenuItem1, Me.AudiênciaToolStripMenuItem, Me.AtendimentoToolStripMenuItem1, Me.ProvidênciasToolStripMenuItem1})
+        Me.AdicionarPrazoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrazoToolStripMenuItem1, Me.AudiênciaToolStripMenuItem, Me.ProvidênciasToolStripMenuItem1, Me.AtendimentoToolStripMenuItem1})
         Me.AdicionarPrazoToolStripMenuItem.Name = "AdicionarPrazoToolStripMenuItem"
         Me.AdicionarPrazoToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
         Me.AdicionarPrazoToolStripMenuItem.Text = "Adicionar"
@@ -895,17 +1020,17 @@ Partial Class Agenda
         Me.AudiênciaToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.AudiênciaToolStripMenuItem.Text = "Audiências"
         '
-        'AtendimentoToolStripMenuItem1
-        '
-        Me.AtendimentoToolStripMenuItem1.Name = "AtendimentoToolStripMenuItem1"
-        Me.AtendimentoToolStripMenuItem1.Size = New System.Drawing.Size(144, 22)
-        Me.AtendimentoToolStripMenuItem1.Text = "Atendimento"
-        '
         'ProvidênciasToolStripMenuItem1
         '
         Me.ProvidênciasToolStripMenuItem1.Name = "ProvidênciasToolStripMenuItem1"
         Me.ProvidênciasToolStripMenuItem1.Size = New System.Drawing.Size(144, 22)
         Me.ProvidênciasToolStripMenuItem1.Text = "Providências"
+        '
+        'AtendimentoToolStripMenuItem1
+        '
+        Me.AtendimentoToolStripMenuItem1.Name = "AtendimentoToolStripMenuItem1"
+        Me.AtendimentoToolStripMenuItem1.Size = New System.Drawing.Size(144, 22)
+        Me.AtendimentoToolStripMenuItem1.Text = "Atendimento"
         '
         'ComboBox4
         '
@@ -924,7 +1049,7 @@ Partial Class Agenda
         'PictureBox1
         '
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Image = Global.MeusEsc.My.Resources.Resources.Sair
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(0, 656)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(118, 32)
@@ -936,7 +1061,7 @@ Partial Class Agenda
         'PictureBox14
         '
         Me.PictureBox14.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox14.Image = Global.MeusEsc.My.Resources.Resources.usuario
+        Me.PictureBox14.Image = CType(resources.GetObject("PictureBox14.Image"), System.Drawing.Image)
         Me.PictureBox14.Location = New System.Drawing.Point(0, 612)
         Me.PictureBox14.Name = "PictureBox14"
         Me.PictureBox14.Size = New System.Drawing.Size(118, 38)
@@ -948,8 +1073,8 @@ Partial Class Agenda
         'PictureBox15
         '
         Me.PictureBox15.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox15.Image = Global.MeusEsc.My.Resources.Resources.menuvoltar
-        Me.PictureBox15.Location = New System.Drawing.Point(80, 33)
+        Me.PictureBox15.Image = CType(resources.GetObject("PictureBox15.Image"), System.Drawing.Image)
+        Me.PictureBox15.Location = New System.Drawing.Point(80, 34)
         Me.PictureBox15.Name = "PictureBox15"
         Me.PictureBox15.Size = New System.Drawing.Size(42, 38)
         Me.PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -960,8 +1085,8 @@ Partial Class Agenda
         'PictureBox16
         '
         Me.PictureBox16.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox16.Image = Global.MeusEsc.My.Resources.Resources.ir
-        Me.PictureBox16.Location = New System.Drawing.Point(4, 33)
+        Me.PictureBox16.Image = CType(resources.GetObject("PictureBox16.Image"), System.Drawing.Image)
+        Me.PictureBox16.Location = New System.Drawing.Point(4, 34)
         Me.PictureBox16.Name = "PictureBox16"
         Me.PictureBox16.Size = New System.Drawing.Size(42, 38)
         Me.PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -971,8 +1096,8 @@ Partial Class Agenda
         'agendabtn
         '
         Me.agendabtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.agendabtn.Image = Global.MeusEsc.My.Resources.Resources.Agenda
-        Me.agendabtn.Location = New System.Drawing.Point(3, 122)
+        Me.agendabtn.Image = CType(resources.GetObject("agendabtn.Image"), System.Drawing.Image)
+        Me.agendabtn.Location = New System.Drawing.Point(3, 123)
         Me.agendabtn.Name = "agendabtn"
         Me.agendabtn.Size = New System.Drawing.Size(118, 35)
         Me.agendabtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -983,8 +1108,8 @@ Partial Class Agenda
         'painelbtn
         '
         Me.painelbtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.painelbtn.Image = Global.MeusEsc.My.Resources.Resources.Painel
-        Me.painelbtn.Location = New System.Drawing.Point(3, 74)
+        Me.painelbtn.Image = CType(resources.GetObject("painelbtn.Image"), System.Drawing.Image)
+        Me.painelbtn.Location = New System.Drawing.Point(3, 75)
         Me.painelbtn.Name = "painelbtn"
         Me.painelbtn.Size = New System.Drawing.Size(118, 38)
         Me.painelbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -994,7 +1119,7 @@ Partial Class Agenda
         '
         'PictureBox17
         '
-        Me.PictureBox17.Image = Global.MeusEsc.My.Resources.Resources.Menu_Open
+        Me.PictureBox17.Image = CType(resources.GetObject("PictureBox17.Image"), System.Drawing.Image)
         Me.PictureBox17.Location = New System.Drawing.Point(0, -3)
         Me.PictureBox17.Name = "PictureBox17"
         Me.PictureBox17.Size = New System.Drawing.Size(22, 814)
@@ -1004,7 +1129,7 @@ Partial Class Agenda
         '
         'Menu
         '
-        Me.Menu.Image = Global.MeusEsc.My.Resources.Resources.Menu_Open
+        Me.Menu.Image = CType(resources.GetObject("Menu.Image"), System.Drawing.Image)
         Me.Menu.Location = New System.Drawing.Point(-6, -3)
         Me.Menu.Name = "Menu"
         Me.Menu.Size = New System.Drawing.Size(128, 814)
@@ -1012,156 +1137,6 @@ Partial Class Agenda
         Me.Menu.TabIndex = 113
         Me.Menu.TabStop = False
         Me.Menu.Visible = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox3.Image = Global.MeusEsc.My.Resources.Resources._1__2_
-        Me.PictureBox3.Location = New System.Drawing.Point(276, 18)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(22, 23)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 49
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Image = Global.MeusEsc.My.Resources.Resources._1__3_
-        Me.PictureBox2.Location = New System.Drawing.Point(225, 18)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(22, 23)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 48
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox8.Image = Global.MeusEsc.My.Resources.Resources.Logo_Lacerda
-        Me.PictureBox8.Location = New System.Drawing.Point(6, 553)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(212, 107)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox8.TabIndex = 16
-        Me.PictureBox8.TabStop = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox5.Image = Global.MeusEsc.My.Resources.Resources._1__2_
-        Me.PictureBox5.Location = New System.Drawing.Point(71, 9)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(22, 20)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 52
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox6.Image = Global.MeusEsc.My.Resources.Resources._1__3_
-        Me.PictureBox6.Location = New System.Drawing.Point(20, 9)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(22, 20)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 51
-        Me.PictureBox6.TabStop = False
-        '
-        'PictureBox13
-        '
-        Me.PictureBox13.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox13.Image = Global.MeusEsc.My.Resources.Resources.superbox
-        Me.PictureBox13.Location = New System.Drawing.Point(975, 44)
-        Me.PictureBox13.Name = "PictureBox13"
-        Me.PictureBox13.Size = New System.Drawing.Size(167, 624)
-        Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox13.TabIndex = 63
-        Me.PictureBox13.TabStop = False
-        '
-        'PictureBox12
-        '
-        Me.PictureBox12.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox12.Image = Global.MeusEsc.My.Resources.Resources.superbox
-        Me.PictureBox12.Location = New System.Drawing.Point(812, 44)
-        Me.PictureBox12.Name = "PictureBox12"
-        Me.PictureBox12.Size = New System.Drawing.Size(167, 624)
-        Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox12.TabIndex = 62
-        Me.PictureBox12.TabStop = False
-        '
-        'PictureBox10
-        '
-        Me.PictureBox10.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox10.Image = Global.MeusEsc.My.Resources.Resources.superbox
-        Me.PictureBox10.Location = New System.Drawing.Point(652, 44)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(163, 624)
-        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox10.TabIndex = 61
-        Me.PictureBox10.TabStop = False
-        '
-        'PictureBox9
-        '
-        Me.PictureBox9.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox9.Image = Global.MeusEsc.My.Resources.Resources.superbox
-        Me.PictureBox9.Location = New System.Drawing.Point(488, 44)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(167, 624)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox9.TabIndex = 60
-        Me.PictureBox9.TabStop = False
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox7.Image = Global.MeusEsc.My.Resources.Resources.superbox
-        Me.PictureBox7.Location = New System.Drawing.Point(324, 44)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(167, 624)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 59
-        Me.PictureBox7.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox4.Image = Global.MeusEsc.My.Resources.Resources.superbox
-        Me.PictureBox4.Location = New System.Drawing.Point(161, 44)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(167, 624)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 58
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox11
-        '
-        Me.PictureBox11.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox11.Image = Global.MeusEsc.My.Resources.Resources.superbox
-        Me.PictureBox11.Location = New System.Drawing.Point(-2, 44)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(167, 624)
-        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox11.TabIndex = 57
-        Me.PictureBox11.TabStop = False
-        '
-        'PictureBox18
-        '
-        Me.PictureBox18.Image = Global.MeusEsc.My.Resources.Resources.Box
-        Me.PictureBox18.Location = New System.Drawing.Point(489, 42)
-        Me.PictureBox18.Name = "PictureBox18"
-        Me.PictureBox18.Size = New System.Drawing.Size(165, 614)
-        Me.PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox18.TabIndex = 177
-        Me.PictureBox18.TabStop = False
         '
         'Agenda
         '
@@ -1180,6 +1155,7 @@ Partial Class Agenda
         Me.Controls.Add(Me.ComboBox4)
         Me.Controls.Add(Me.Agendados)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(1184, 739)
@@ -1190,6 +1166,8 @@ Partial Class Agenda
         Me.Agendados.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
@@ -1200,19 +1178,6 @@ Partial Class Agenda
         CType(Me.quarta, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.terca, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.segunda, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.agendabtn, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.painelbtn, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Menu, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1223,6 +1188,16 @@ Partial Class Agenda
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.agendabtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.painelbtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Menu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1235,7 +1210,6 @@ Partial Class Agenda
     Friend WithEvents situacao As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem

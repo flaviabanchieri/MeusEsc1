@@ -34,5 +34,8 @@ Public Class Anotacoes
 
 
         Painel.anotacao()
+
+        Me.Close()
+
     End Sub
 End Class

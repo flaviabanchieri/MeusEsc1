@@ -22,6 +22,7 @@ Partial Class Login
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -34,7 +35,6 @@ Partial Class Login
         Me.user = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
@@ -54,7 +54,7 @@ Partial Class Login
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label7.ForeColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Label7.Location = New System.Drawing.Point(499, 250)
+        Me.Label7.Location = New System.Drawing.Point(529, 267)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(18, 13)
         Me.Label7.TabIndex = 55
@@ -168,25 +168,13 @@ Partial Class Login
         Me.Label1.TabIndex = 41
         Me.Label1.Text = "Usuário"
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label8.Location = New System.Drawing.Point(287, 242)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(94, 13)
-        Me.Label8.TabIndex = 56
-        Me.Label8.Text = "Entrar sem usuário"
-        '
         'PictureBox6
         '
         Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox6.Image = Global.MeusEsc.My.Resources.Resources.AGP3
-        Me.PictureBox6.Location = New System.Drawing.Point(52, 21)
+
+        Me.PictureBox6.Location = New System.Drawing.Point(438, 222)
         Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(172, 151)
+        Me.PictureBox6.Size = New System.Drawing.Size(110, 104)
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox6.TabIndex = 57
         Me.PictureBox6.TabStop = False
@@ -194,8 +182,8 @@ Partial Class Login
         'PictureBox3
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.Image = Global.MeusEsc.My.Resources.Resources.banch
-        Me.PictureBox3.Location = New System.Drawing.Point(537, 235)
+
+        Me.PictureBox3.Location = New System.Drawing.Point(567, 252)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(45, 46)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -204,8 +192,8 @@ Partial Class Login
         '
         'PictureBox4
         '
-        Me.PictureBox4.Image = Global.MeusEsc.My.Resources.Resources.banch_logo
-        Me.PictureBox4.Location = New System.Drawing.Point(504, 242)
+
+        Me.PictureBox4.Location = New System.Drawing.Point(534, 259)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(41, 23)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -215,7 +203,7 @@ Partial Class Login
         'PictureBox2
         '
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Image = Global.MeusEsc.My.Resources.Resources._6405909
+
         Me.PictureBox2.Location = New System.Drawing.Point(546, 129)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(36, 34)
@@ -227,7 +215,7 @@ Partial Class Login
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Image = Global.MeusEsc.My.Resources.Resources.Apresentação_curso_tecnologia_para_mulheres_moderno_neon__1_
+
         Me.PictureBox1.Location = New System.Drawing.Point(286, 185)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(255, 24)
@@ -238,12 +226,12 @@ Partial Class Login
         'PictureBox5
         '
         Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox5.Image = Global.MeusEsc.My.Resources.Resources.Apresentação_curso_tecnologia_para_mulheres_moderno_neon
-        Me.PictureBox5.Location = New System.Drawing.Point(52, 138)
+
+        Me.PictureBox5.Location = New System.Drawing.Point(48, 87)
         Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(172, 122)
+        Me.PictureBox5.Size = New System.Drawing.Size(190, 85)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 54
+        Me.PictureBox5.TabIndex = 58
         Me.PictureBox5.TabStop = False
         '
         'Login
@@ -252,8 +240,7 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(629, 310)
-        Me.Controls.Add(Me.PictureBox6)
-        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.Label6)
@@ -270,7 +257,8 @@ Partial Class Login
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.PictureBox5)
+        Me.Controls.Add(Me.PictureBox6)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(645, 349)
         Me.MinimumSize = New System.Drawing.Size(645, 349)
@@ -303,7 +291,6 @@ Partial Class Login
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents Label8 As Label
     Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
 End Class

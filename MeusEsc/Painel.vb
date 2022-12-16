@@ -60,7 +60,7 @@ Public Class Painel
 
         cmd = con.CreateCommand()
         cmd.CommandType = CommandType.Text
-        cmd.CommandText = "select Hora, parte from audiencias WHERE data = '" & data & "'"
+        cmd.CommandText = "select data, hora, horamin, minuto, parte from Audiencias WHERE data = '" & data & "' order by horamin desc, minuto"
 
         cmd.ExecuteNonQuery()
 
@@ -68,6 +68,11 @@ Public Class Painel
         Dim da As New SqlDataAdapter(cmd)
         da.Fill(dt)
         DataGridView3.DataSource = dt
+
+        DataGridView3.Columns("horamin").Visible = False
+        DataGridView3.Columns("minuto").Visible = False
+        DataGridView3.Columns("data").Visible = False
+
 
 
 
@@ -90,7 +95,7 @@ Public Class Painel
 
         cmd = con.CreateCommand()
         cmd.CommandType = CommandType.Text
-        cmd.CommandText = "select data, diligencia from anotacoes order by data desc"
+        cmd.CommandText = "select diligencia, data from anotacoes order by data desc"
 
         cmd.ExecuteNonQuery()
 
@@ -99,6 +104,66 @@ Public Class Painel
         da.Fill(dt)
         DataGridView5.DataSource = dt
     End Sub
+
+    Public Sub providencias()
+        Dim data As String
+
+        data = Format(DateTimePicker1.Value, "dd/MM/yyyy")
+
+        If con.State = ConnectionState.Open Then
+            con.Close()
+
+        End If
+        con.Open()
+
+
+
+        cmd = con.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "select responsavel, processo, diligencia, data, from providencias"
+
+        cmd.ExecuteNonQuery()
+
+        Dim dt As New DataTable()
+        Dim da As New SqlDataAdapter(cmd)
+        da.Fill(dt)
+        DataGridView2.DataSource = dt
+        Me.DataGridView2.Columns("data").Visible = False
+    End Sub
+
+    Public Sub hoje()
+        Dim data As String
+
+        data = Format(DateTimePicker1.Value, "dd/MM/yyyy")
+
+        If con.State = ConnectionState.Open Then
+            con.Close()
+
+        End If
+        con.Open()
+
+
+
+        cmd = con.CreateCommand()
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = "select data, hora, horamin, minuto, parte from atendimento WHERE data = '" & data & "' order by horamin desc, minuto"
+
+        cmd.ExecuteNonQuery()
+
+        Dim dt As New DataTable()
+        Dim da As New SqlDataAdapter(cmd)
+        da.Fill(dt)
+        DataGridView3.DataSource = dt
+
+        DataGridView4.Columns("horamin").Visible = False
+        DataGridView4.Columns("minuto").Visible = False
+        DataGridView4.Columns("data").Visible = False
+
+    End Sub
+
+
+
+
 
 
 
@@ -142,12 +207,7 @@ Public Class Painel
 
 
 
-    Private Sub DataGridView1_doubleClick(sender As Object, e As EventArgs) Handles DataGridView1.DoubleClick
-        Agenda.Show()
-        Me.Close()
 
-
-    End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         agendabtn.Visible = True
@@ -208,4 +268,45 @@ Public Class Painel
 
 
     End Sub
+    Private Sub DataGridView1_DoubleClick(sender As Object, e As EventArgs) Handles DataGridView1.DoubleClick
+
+        Agenda.Show()
+        Me.Close()
+
+
+
+    End Sub
+
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+
+        Login.Show()
+        Me.Close()
+        fundo.Close()
+
+
+
+    End Sub
+
+
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        Usuario.Show()
+        Me.Close()
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
+        Agenda.Show()
+        Me.Close()
+
+    End Sub
+
+    Private Sub DataGridView3_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellContentDoubleClick
+        Agenda.Show()
+        Agenda.audiencia_menu()
+        Me.Close()
+
+    End Sub
+
+
 End Class

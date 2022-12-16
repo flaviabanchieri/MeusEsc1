@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>U:\ARQUIVO-GERAL\ESTAGIÁRIOS\Flavia\MeuEsc\</PublishUrl>
+    <PublishUrl>C:\MeuEsc\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,9 +25,13 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ProductName>MeuEsc - Lacerda</ProductName>
+    <PublisherName>Banch Softwares</PublisherName>
+    <SuiteName>MeuEsc</SuiteName>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -74,6 +78,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Nager.Date, Version=1.36.4.0, Culture=neutral, processorArchitecture=MSIL">
@@ -131,10 +138,27 @@
     <Compile Include="Cadastrar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Consulta.Designer.vb">
+      <DependentUpon>Consulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DadosAlt.Designer.vb">
       <DependentUpon>DadosAlt.vb</DependentUpon>
     </Compile>
     <Compile Include="DadosAlt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.Designer.vb">
+      <DependentUpon>Usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fundo.Designer.vb">
@@ -155,11 +179,6 @@
       <DependentUpon>Application.myapp</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -169,6 +188,12 @@
       <DependentUpon>Painel.vb</DependentUpon>
     </Compile>
     <Compile Include="Painel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="senha.Designer.vb">
+      <DependentUpon>senha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="senha.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -185,8 +210,14 @@
     <EmbeddedResource Include="Cadastrar.resx">
       <DependentUpon>Cadastrar.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consulta.resx">
+      <DependentUpon>Consulta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DadosAlt.resx">
       <DependentUpon>DadosAlt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario.resx">
+      <DependentUpon>Usuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fundo.resx">
       <DependentUpon>fundo.vb</DependentUpon>
@@ -199,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Painel.resx">
       <DependentUpon>Painel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="senha.resx">
+      <DependentUpon>senha.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -226,6 +260,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="11_4_.ico" />
+    <Content Include="1_4_.ico" />
+    <Content Include="2.ico" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\Menu Open.png" />
+    <None Include="img\Menu Open.png" />
+    <None Include="img\Agenda.png" />
     <Content Include="Meuesc.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -244,6 +285,16 @@
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.NetCore.DesktopRuntime.6.0.x86">
+      <Visible>False</Visible>
+      <ProductName>Runtime do .NET Desktop 6.0.10 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.Express.11.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2012 Express</ProductName>
+      <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.SqlServer.SqlLocalDB.15.0">
       <Visible>False</Visible>

@@ -23,6 +23,7 @@ Partial Class DadosAlt
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DadosAlt))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label26 = New System.Windows.Forms.Label()
@@ -40,6 +41,7 @@ Partial Class DadosAlt
         Me.pproc2 = New System.Windows.Forms.TextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.partetxt = New System.Windows.Forms.TextBox()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.proctxt2 = New System.Windows.Forms.TextBox()
@@ -130,8 +132,8 @@ Partial Class DadosAlt
         Me.AdicionarPrazoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrazoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AudiênciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AtendimentoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProvidênciasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AtendimentoStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.idcli = New System.Windows.Forms.TextBox()
         Me.procid = New System.Windows.Forms.TextBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
@@ -146,6 +148,7 @@ Partial Class DadosAlt
         Me.AtendimentoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AtendimentoTableAdapter = New MeusEsc.MeuescDataSetTableAdapters.AtendimentoTableAdapter()
         Me.TableAdapterManager = New MeusEsc.MeuescDataSetTableAdapters.TableAdapterManager()
+        Me.MeuescDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -165,6 +168,7 @@ Partial Class DadosAlt
         CType(Me.Menu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MeuescDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AtendimentoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MeuescDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -260,7 +264,7 @@ Partial Class DadosAlt
         '
         'id
         '
-        Me.id.Location = New System.Drawing.Point(901, 23)
+        Me.id.Location = New System.Drawing.Point(755, 22)
         Me.id.Name = "id"
         Me.id.Size = New System.Drawing.Size(73, 20)
         Me.id.TabIndex = 63
@@ -273,7 +277,7 @@ Partial Class DadosAlt
         Me.manual.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.manual.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.manual.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.manual.Location = New System.Drawing.Point(866, 21)
+        Me.manual.Location = New System.Drawing.Point(852, 23)
         Me.manual.Name = "manual"
         Me.manual.Size = New System.Drawing.Size(142, 18)
         Me.manual.TabIndex = 90
@@ -371,6 +375,7 @@ Partial Class DadosAlt
         '
         Me.TabPage3.AutoScroll = True
         Me.TabPage3.BackColor = System.Drawing.Color.White
+        Me.TabPage3.Controls.Add(Me.TextBox2)
         Me.TabPage3.Controls.Add(Me.partetxt)
         Me.TabPage3.Controls.Add(Me.Label32)
         Me.TabPage3.Controls.Add(Me.proctxt2)
@@ -403,6 +408,15 @@ Partial Class DadosAlt
         Me.TabPage3.TabIndex = 0
         Me.TabPage3.Text = "Prazos"
         Me.TabPage3.ToolTipText = "Adicionar Prazos"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(26, 95)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(264, 22)
+        Me.TextBox2.TabIndex = 101
+        Me.TextBox2.Visible = False
         '
         'partetxt
         '
@@ -686,7 +700,7 @@ Partial Class DadosAlt
         '
         Me.statuscb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.statuscb.FormattingEnabled = True
-        Me.statuscb.Items.AddRange(New Object() {"Pendente", "Completo", "Remarcado", "Fatal", "Não precisa providência", "Verificado"})
+        Me.statuscb.Items.AddRange(New Object() {"Pendente", "Completo", "Remarcar", "Remarcado", "Fatal", "Não precisa providência", "Verificado"})
         Me.statuscb.Location = New System.Drawing.Point(319, 208)
         Me.statuscb.Name = "statuscb"
         Me.statuscb.Size = New System.Drawing.Size(274, 24)
@@ -1206,7 +1220,7 @@ Partial Class DadosAlt
         'provcli
         '
         Me.provcli.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.provcli.Location = New System.Drawing.Point(23, 130)
+        Me.provcli.Location = New System.Drawing.Point(32, 130)
         Me.provcli.Name = "provcli"
         Me.provcli.Size = New System.Drawing.Size(219, 22)
         Me.provcli.TabIndex = 124
@@ -1242,7 +1256,7 @@ Partial Class DadosAlt
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label45.AutoSize = True
         Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(20, 235)
+        Me.Label45.Location = New System.Drawing.Point(29, 235)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(44, 16)
         Me.Label45.TabIndex = 121
@@ -1254,7 +1268,7 @@ Partial Class DadosAlt
         Me.provstatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.provstatus.FormattingEnabled = True
         Me.provstatus.Items.AddRange(New Object() {"Pendente", "Completo", "Remarcado", "Fatal", "Não precisa providência", "Verificado"})
-        Me.provstatus.Location = New System.Drawing.Point(23, 254)
+        Me.provstatus.Location = New System.Drawing.Point(32, 254)
         Me.provstatus.Name = "provstatus"
         Me.provstatus.Size = New System.Drawing.Size(219, 24)
         Me.provstatus.TabIndex = 120
@@ -1266,6 +1280,7 @@ Partial Class DadosAlt
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label44.BackColor = System.Drawing.Color.Maroon
+        Me.Label44.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label44.ForeColor = System.Drawing.Color.White
         Me.Label44.Location = New System.Drawing.Point(986, 256)
@@ -1282,7 +1297,7 @@ Partial Class DadosAlt
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label38.AutoSize = True
         Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label38.Location = New System.Drawing.Point(20, 176)
+        Me.Label38.Location = New System.Drawing.Point(29, 176)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(88, 16)
         Me.Label38.TabIndex = 117
@@ -1293,7 +1308,7 @@ Partial Class DadosAlt
         '
         Me.provresp.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.provresp.FormattingEnabled = True
-        Me.provresp.Location = New System.Drawing.Point(23, 195)
+        Me.provresp.Location = New System.Drawing.Point(32, 195)
         Me.provresp.Name = "provresp"
         Me.provresp.Size = New System.Drawing.Size(219, 24)
         Me.provresp.TabIndex = 116
@@ -1326,7 +1341,7 @@ Partial Class DadosAlt
         'provproc2
         '
         Me.provproc2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.provproc2.Location = New System.Drawing.Point(207, 76)
+        Me.provproc2.Location = New System.Drawing.Point(216, 76)
         Me.provproc2.Name = "provproc2"
         Me.provproc2.Size = New System.Drawing.Size(35, 22)
         Me.provproc2.TabIndex = 108
@@ -1338,7 +1353,7 @@ Partial Class DadosAlt
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label33.AutoSize = True
         Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.Location = New System.Drawing.Point(20, 114)
+        Me.Label33.Location = New System.Drawing.Point(29, 114)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(48, 16)
         Me.Label33.TabIndex = 106
@@ -1352,7 +1367,7 @@ Partial Class DadosAlt
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(190, 79)
+        Me.Label34.Location = New System.Drawing.Point(199, 79)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(11, 16)
         Me.Label34.TabIndex = 104
@@ -1366,7 +1381,7 @@ Partial Class DadosAlt
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label35.AutoSize = True
         Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.Location = New System.Drawing.Point(20, 57)
+        Me.Label35.Location = New System.Drawing.Point(29, 57)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(78, 16)
         Me.Label35.TabIndex = 105
@@ -1380,7 +1395,7 @@ Partial Class DadosAlt
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label36.AutoSize = True
         Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label36.Location = New System.Drawing.Point(20, 8)
+        Me.Label36.Location = New System.Drawing.Point(29, 8)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(42, 16)
         Me.Label36.TabIndex = 107
@@ -1391,7 +1406,7 @@ Partial Class DadosAlt
         '
         Me.provdata.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.provdata.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.provdata.Location = New System.Drawing.Point(25, 27)
+        Me.provdata.Location = New System.Drawing.Point(34, 27)
         Me.provdata.Name = "provdata"
         Me.provdata.Size = New System.Drawing.Size(104, 22)
         Me.provdata.TabIndex = 102
@@ -1399,7 +1414,7 @@ Partial Class DadosAlt
         'PROVPROC1
         '
         Me.PROVPROC1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PROVPROC1.Location = New System.Drawing.Point(23, 76)
+        Me.PROVPROC1.Location = New System.Drawing.Point(32, 76)
         Me.PROVPROC1.Mask = "#######-##.####.#.##.####"
         Me.PROVPROC1.Name = "PROVPROC1"
         Me.PROVPROC1.Size = New System.Drawing.Size(158, 22)
@@ -1454,7 +1469,7 @@ Partial Class DadosAlt
         '
         'AdicionarPrazoToolStripMenuItem
         '
-        Me.AdicionarPrazoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrazoToolStripMenuItem1, Me.AudiênciaToolStripMenuItem, Me.AtendimentoToolStripMenuItem1, Me.ProvidênciasToolStripMenuItem1})
+        Me.AdicionarPrazoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrazoToolStripMenuItem1, Me.AudiênciaToolStripMenuItem, Me.ProvidênciasToolStripMenuItem1, Me.AtendimentoStripMenuItem2})
         Me.AdicionarPrazoToolStripMenuItem.Name = "AdicionarPrazoToolStripMenuItem"
         Me.AdicionarPrazoToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
         Me.AdicionarPrazoToolStripMenuItem.Text = "Adicionar"
@@ -1471,17 +1486,17 @@ Partial Class DadosAlt
         Me.AudiênciaToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.AudiênciaToolStripMenuItem.Text = "Audiências"
         '
-        'AtendimentoToolStripMenuItem1
-        '
-        Me.AtendimentoToolStripMenuItem1.Name = "AtendimentoToolStripMenuItem1"
-        Me.AtendimentoToolStripMenuItem1.Size = New System.Drawing.Size(144, 22)
-        Me.AtendimentoToolStripMenuItem1.Text = "Atendimento"
-        '
         'ProvidênciasToolStripMenuItem1
         '
         Me.ProvidênciasToolStripMenuItem1.Name = "ProvidênciasToolStripMenuItem1"
         Me.ProvidênciasToolStripMenuItem1.Size = New System.Drawing.Size(144, 22)
         Me.ProvidênciasToolStripMenuItem1.Text = "Providências"
+        '
+        'AtendimentoStripMenuItem2
+        '
+        Me.AtendimentoStripMenuItem2.Name = "AtendimentoStripMenuItem2"
+        Me.AtendimentoStripMenuItem2.Size = New System.Drawing.Size(144, 22)
+        Me.AtendimentoStripMenuItem2.Text = "Atendimento"
         '
         'idcli
         '
@@ -1503,7 +1518,7 @@ Partial Class DadosAlt
         'PictureBox5
         '
         Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox5.Image = Global.MeusEsc.My.Resources.Resources.Sair
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
         Me.PictureBox5.Location = New System.Drawing.Point(0, 656)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(118, 32)
@@ -1515,7 +1530,7 @@ Partial Class DadosAlt
         'PictureBox4
         '
         Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox4.Image = Global.MeusEsc.My.Resources.Resources.usuario
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
         Me.PictureBox4.Location = New System.Drawing.Point(0, 612)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(118, 38)
@@ -1527,8 +1542,8 @@ Partial Class DadosAlt
         'PictureBox3
         '
         Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox3.Image = Global.MeusEsc.My.Resources.Resources.menuvoltar
-        Me.PictureBox3.Location = New System.Drawing.Point(80, 33)
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(80, 34)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(42, 38)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1539,8 +1554,8 @@ Partial Class DadosAlt
         'PictureBox2
         '
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Image = Global.MeusEsc.My.Resources.Resources.ir
-        Me.PictureBox2.Location = New System.Drawing.Point(4, 33)
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(5, 34)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(42, 38)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1550,8 +1565,8 @@ Partial Class DadosAlt
         'agendabtn
         '
         Me.agendabtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.agendabtn.Image = Global.MeusEsc.My.Resources.Resources.Agenda
-        Me.agendabtn.Location = New System.Drawing.Point(3, 122)
+        Me.agendabtn.Image = CType(resources.GetObject("agendabtn.Image"), System.Drawing.Image)
+        Me.agendabtn.Location = New System.Drawing.Point(3, 123)
         Me.agendabtn.Name = "agendabtn"
         Me.agendabtn.Size = New System.Drawing.Size(118, 35)
         Me.agendabtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1562,8 +1577,8 @@ Partial Class DadosAlt
         'painelbtn
         '
         Me.painelbtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.painelbtn.Image = Global.MeusEsc.My.Resources.Resources.Painel
-        Me.painelbtn.Location = New System.Drawing.Point(3, 74)
+        Me.painelbtn.Image = CType(resources.GetObject("painelbtn.Image"), System.Drawing.Image)
+        Me.painelbtn.Location = New System.Drawing.Point(3, 75)
         Me.painelbtn.Name = "painelbtn"
         Me.painelbtn.Size = New System.Drawing.Size(118, 38)
         Me.painelbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1573,8 +1588,8 @@ Partial Class DadosAlt
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.MeusEsc.My.Resources.Resources.Menu_Open
-        Me.PictureBox1.Location = New System.Drawing.Point(0, -3)
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(1, -2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(22, 814)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1583,8 +1598,8 @@ Partial Class DadosAlt
         '
         'Menu
         '
-        Me.Menu.Image = Global.MeusEsc.My.Resources.Resources.Menu_Open
-        Me.Menu.Location = New System.Drawing.Point(-6, -3)
+        Me.Menu.Image = CType(resources.GetObject("Menu.Image"), System.Drawing.Image)
+        Me.Menu.Location = New System.Drawing.Point(-6, -2)
         Me.Menu.Name = "Menu"
         Me.Menu.Size = New System.Drawing.Size(128, 814)
         Me.Menu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1617,6 +1632,11 @@ Partial Class DadosAlt
         Me.TableAdapterManager.UpdateOrder = MeusEsc.MeuescDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsersTableAdapter = Nothing
         '
+        'MeuescDataSetBindingSource
+        '
+        Me.MeuescDataSetBindingSource.DataSource = Me.MeuescDataSet
+        Me.MeuescDataSetBindingSource.Position = 0
+        '
         'DadosAlt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1637,6 +1657,7 @@ Partial Class DadosAlt
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(1184, 739)
         Me.MinimumSize = New System.Drawing.Size(1022, 726)
@@ -1668,6 +1689,7 @@ Partial Class DadosAlt
         CType(Me.Menu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MeuescDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AtendimentoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MeuescDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1733,7 +1755,6 @@ Partial Class DadosAlt
     Friend WithEvents AdicionarPrazoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PrazoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents AudiênciaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AtendimentoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ProvidênciasToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents Atendimento As TabPage
     Friend WithEvents atobs As RichTextBox
@@ -1796,4 +1817,7 @@ Partial Class DadosAlt
     Friend WithEvents Label29 As Label
     Friend WithEvents atcliente As TextBox
     Friend WithEvents provcli As TextBox
+    Friend WithEvents AtendimentoStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents MeuescDataSetBindingSource As BindingSource
 End Class

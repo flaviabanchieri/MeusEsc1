@@ -1,10 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Runtime.CompilerServices
-Imports System.Data
-Imports System.Drawing.Printing
-Imports System.Linq
 Imports Nager.Date
-Imports System.Globalization
 
 ''' <summary>
 ''' Contains methods that extend the <see cref="DateTime"/> structure.
@@ -208,47 +204,7 @@ Public Class DadosAlt
 
     Dim con As New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Meuesc.mdf;Integrated Security=True")
     Dim cmd As New SqlCommand
-    Private Sub prazosparte()
-        If con.State = ConnectionState.Open Then
-            con.Close()
 
-        End If
-        con.Open()
-
-        cmd = con.CreateCommand()
-        cmd.CommandType = CommandType.Text
-
-        cmd.CommandText = "select nome from clientes"
-
-        cmd.ExecuteNonQuery()
-
-        Dim dt As New DataSet()
-        Dim da As New SqlDataAdapter(cmd)
-        da.Fill(dt)
-        Dim column1 As New AutoCompleteStringCollection
-        For i As Integer = 0 To dt.Tables(0).Rows.Count - 1
-            column1.Add(dt.Tables(0).Rows(i)("nome").ToString())
-        Next
-        pparte.AutoCompleteSource = AutoCompleteSource.CustomSource
-        pparte.AutoCompleteCustomSource = column1
-        pparte.AutoCompleteMode = AutoCompleteMode.Suggest
-
-        audpar.AutoCompleteSource = AutoCompleteSource.CustomSource
-        audpar.AutoCompleteCustomSource = column1
-        audpar.AutoCompleteMode = AutoCompleteMode.Suggest
-
-        atcliente.AutoCompleteSource = AutoCompleteSource.CustomSource
-        atcliente.AutoCompleteCustomSource = column1
-        atcliente.AutoCompleteMode = AutoCompleteMode.Suggest
-
-        provcli.AutoCompleteSource = AutoCompleteSource.CustomSource
-        provcli.AutoCompleteCustomSource = column1
-        provcli.AutoCompleteMode = AutoCompleteMode.Suggest
-
-
-
-
-    End Sub
 
     Private Sub manuallbl_Click(sender As Object, e As EventArgs) Handles manuallbl.Click
         If manual.Checked = False Then
@@ -674,11 +630,6 @@ Public Class DadosAlt
 
     End Sub
 
-    Private Sub AtendimentoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AtendimentoToolStripMenuItem1.Click
-        atendimento_dados()
-        display_dados()
-
-    End Sub
 
     Private Sub ProvidênciasToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProvidênciasToolStripMenuItem1.Click
         providencias_dados()
@@ -718,6 +669,16 @@ Public Class DadosAlt
             da.Fill(dt)
             DataGridView1.DataSource = dt
             Me.DataGridView1.Columns("id_proc").Visible = False
+            Me.DataGridView1.Columns("Prazo").Visible = False
+            Me.DataGridView1.Columns("Processo").HeaderText = "Processo"
+            Me.DataGridView1.Columns("Publicacao").HeaderText = "Publicação"
+            Me.DataGridView1.Columns("Diligencia").HeaderText = "Diligência"
+            Me.DataGridView1.Columns("situacao").HeaderText = "Situação"
+            Me.DataGridView1.Columns("responsavel").HeaderText = "Responsável"
+            Me.DataGridView1.Columns("Parte").HeaderText = "Parte"
+            Me.DataGridView1.Columns("Fatal").HeaderText = "Prazo Fatal"
+            Me.DataGridView1.Columns("Criacao").HeaderText = "Criação"
+
 
 
 
@@ -743,6 +704,13 @@ Public Class DadosAlt
             Me.DataGridView1.Columns("horamin").Visible = False
             Me.DataGridView1.Columns("minuto").Visible = False
             Me.DataGridView1.Columns("id_proc").Visible = False
+            Me.DataGridView1.Columns("Processo").HeaderText = "Processo"
+            Me.DataGridView1.Columns("anotacao").HeaderText = "Anotação"
+            Me.DataGridView1.Columns("Parte").HeaderText = "Parte"
+            Me.DataGridView1.Columns("Responsavel").HeaderText = "Responsável"
+            Me.DataGridView1.Columns("Vara").HeaderText = "Vara"
+            Me.DataGridView1.Columns("Sala").HeaderText = "Sala"
+            Me.DataGridView1.Columns("hora").HeaderText = "Hora"
 
 
         ElseIf TabControl1.SelectedIndex = 2 Then
@@ -767,6 +735,10 @@ Public Class DadosAlt
             Me.DataGridView1.Columns("minuto").Visible = False
             Me.DataGridView1.Columns("id_proc").Visible = False
             Me.DataGridView1.Columns("id_client").Visible = False
+            Me.DataGridView1.Columns("hora").HeaderText = "Hora"
+            Me.DataGridView1.Columns("parte").HeaderText = "Parte"
+            Me.DataGridView1.Columns("processo").HeaderText = "Processo"
+            Me.DataGridView1.Columns("anotacao").HeaderText = "Anotação"
 
 
         Else
@@ -787,6 +759,13 @@ Public Class DadosAlt
             Dim da As New SqlDataAdapter(cmd)
             da.Fill(dt)
             DataGridView1.DataSource = dt
+            Me.DataGridView1.Columns("Processo").HeaderText = "Processo"
+            Me.DataGridView1.Columns("anotacoes").HeaderText = "Anotação"
+            Me.DataGridView1.Columns("Parte").HeaderText = "Parte"
+            Me.DataGridView1.Columns("Responsavel").HeaderText = "Responsável"
+            Me.DataGridView1.Columns("diligencia").HeaderText = "Diligências"
+            Me.DataGridView1.Columns("situacao").HeaderText = "Situação"
+
         End If
 
     End Function
@@ -834,7 +813,7 @@ Public Class DadosAlt
 
         Dim Fat As Date
 
-        fatal.Value = inicio.AddDays(diasprazo)
+        fatal.Value = inicio.AddDays(diasprazo - 1)
 
         Fat = fatal.Value
 
@@ -875,64 +854,149 @@ Public Class DadosAlt
 
     '================================== PRAZOS SALVAR ==============================================================================================
     Private Sub Label32_Click(sender As Object, e As EventArgs) Handles Label32.Click
-        'prazos
-        If con.State = ConnectionState.Open Then
-            con.Close()
+
+
+        If Label32.Text = "Salvar" Then
+
+
+
+
+
+            'prazos
+            If con.State = ConnectionState.Open Then
+                con.Close()
+
+            End If
+            con.Open()
+
+            Dim datapub As String
+            Dim diasprazo As Double
+            Dim dataprazo As String
+            Dim prazofatal As String
+            Dim proc As String
+            Dim parte As String
+            Dim dili As String
+            Dim responsavel As String
+            Dim estatus As String
+            Dim criacao As String
+
+            criacao = fundo.nome.Text
+
+            datapub = Format(datapubtxt.Value, "dd/MM/yyyy")
+            diasprazo = Convert.ToDouble(diasprazoud.Text)
+            If proctxt2.Text <> "" Then
+                proc = MaskedTextBox2.Text + "/" + proctxt2.Text
+            Else proc = MaskedTextBox2.Text
+            End If
+            dataprazo = Format(ddataprazo.Value, "dd/MM/yyyy")
+            parte = partetxt.Text
+            prazofatal = Format(dprazofatal.Value, "dd/MM/yyyy")
+            dili = diltxt.Text
+            responsavel = respcb.Text
+            estatus = statuscb.Text
+
+
+
+            cmd = con.CreateCommand()
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = "insert into DadosPrazos1(Responsavel, Publicacao, Dias, Prazo, Fatal, Processo, Parte, Diligencia, SITUACAO, criacao) values ('" & responsavel & "','" & datapub & "','" & diasprazo & "','" & dataprazo & "','" & prazofatal & "','" & proc & "','" & parte & "','" & dili & "','" & estatus & "', '" & criacao & "')"
+            cmd.ExecuteNonQuery()
+
+            'display_dados_dados
+
+            datapubtxt.Value = DateTime.Now
+            diasprazoud.Text = 1
+            DataGridView1.ResetText()
+            ddataprazo.ResetText()
+            partetxt.ResetText()
+            proctxt2.ResetText()
+            dprazofatal.ResetText()
+            diltxt.ResetText()
+            respcb.ResetText()
+            statuscb.Text = "Pendente"
+            TextBox1.Text = ""
+            MaskedTextBox2.ResetText()
+            penal.Checked = False
+
+            display_dados()
+            Painel.Prazos()
+            ResponsavelNome()
+
+
+            manual.Checked = False
+            manuallbl.ForeColor = Color.DimGray
+            ddataprazo.Enabled = False
+
+        Else
+            'prazos
+            If con.State = ConnectionState.Open Then
+                con.Close()
+
+            End If
+            con.Open()
+
+            Dim datapub As String
+            Dim diasprazo As Double
+            Dim dataprazo As String
+            Dim prazofatal As String
+            Dim proc As String
+            Dim parte As String
+            Dim dili As String
+            Dim responsavel As String
+            Dim estatus As String
+            Dim criacao As String
+
+            criacao = fundo.nome.Text
+            Dim dates As Date
+
+            dates = Format(dprazofatal.Value, "dd/MM/yyyy")
+
+
+            datapub = Format(datapubtxt.Value, "dd/MM/yyyy")
+            diasprazo = Convert.ToDouble(diasprazoud.Text)
+            proc = TextBox2.Text
+            dataprazo = Format(ddataprazo.Value, "dd/MM/yyyy")
+            parte = partetxt.Text
+            prazofatal = Format(dprazofatal.Value, "dd/MM/yyyy")
+            dili = diltxt.Text
+            responsavel = respcb.Text
+            statuscb.Text = "Remarcado"
+            estatus = statuscb.Text
+
+
+
+            cmd = con.CreateCommand()
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = "insert into DadosPrazos1(Responsavel, Publicacao, Dias, Prazo, Fatal, Processo, Parte, Diligencia, SITUACAO, criacao) values ('" & responsavel & "','" & datapub & "','" & diasprazo & "','" & dataprazo & "','" & prazofatal & "','" & proc & "','" & parte & "','" & dili & "','" & estatus & "', '" & criacao & "')"
+            cmd.ExecuteNonQuery()
+
+            'display_dados_dados
+
+            datapubtxt.Value = DateTime.Now
+            diasprazoud.Text = 1
+            DataGridView1.ResetText()
+            ddataprazo.ResetText()
+            partetxt.ResetText()
+            proctxt2.ResetText()
+            dprazofatal.ResetText()
+            diltxt.ResetText()
+            respcb.ResetText()
+            statuscb.Text = "Pendente"
+            TextBox1.Text = ""
+            MaskedTextBox2.ResetText()
+            penal.Checked = False
+
+            display_dados()
+            Painel.Prazos()
+            Label32.Text = "Salvar"
+            TextBox2.Visible = False
+            manual.Checked = False
+            manuallbl.ForeColor = Color.DimGray
+            ddataprazo.Enabled = False
+            TextBox2.Visible = False
+            ResponsavelNome()
 
         End If
-        con.Open()
-
-        Dim datapub As String
-        Dim diasprazo As Double
-        Dim dataprazo As String
-        Dim prazofatal As String
-        Dim proc As String
-        Dim parte As String
-        Dim dili As String
-        Dim responsavel As String
-        Dim estatus As String
-        Dim criacao As String
-
-        criacao = fundo.nome.Text
-
-        datapub = Format(datapubtxt.Value, "dd/MM/yyyy")
-        diasprazo = Convert.ToDouble(diasprazoud.Text)
-        If proctxt2.Text <> "" Then
-            proc = MaskedTextBox2.Text + "/" + proctxt2.Text
-        Else proc = MaskedTextBox2.Text
-        End If
-        dataprazo = Format(ddataprazo.Value, "dd/MM/yyyy")
-        parte = partetxt.Text
-        prazofatal = Format(dprazofatal.Value, "dd/MM/yyyy")
-        dili = diltxt.Text
-        responsavel = respcb.Text
-        estatus = statuscb.Text
-
-
-
-        cmd = con.CreateCommand()
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = "insert into DadosPrazos1(Responsavel, Publicacao, Dias, Prazo, Fatal, Processo, Parte, Diligencia, SITUACAO, criacao) values ('" & responsavel & "','" & datapub & "','" & diasprazo & "','" & dataprazo & "','" & prazofatal & "','" & proc & "','" & parte & "','" & dili & "','" & estatus & "', '" & criacao & "')"
-        cmd.ExecuteNonQuery()
-
-        'display_dados_dados
-
-        datapubtxt.Value = DateTime.Now
-        diasprazoud.Text = 1
-        DataGridView1.ResetText()
-        ddataprazo.ResetText()
-        partetxt.ResetText()
-        proctxt2.ResetText()
-        dprazofatal.ResetText()
-        diltxt.ResetText()
-        respcb.ResetText()
-        statuscb.Text = "Pendente"
-        TextBox1.Text = ""
-        MaskedTextBox2.ResetText()
-        penal.Checked = False
-
-        display_dados()
-        Painel.Prazos()
 
     End Sub
 
@@ -1003,6 +1067,7 @@ Public Class DadosAlt
 
 
         display_dados()
+        ResponsavelNome()
 
         Painel.audiencias()
 
@@ -1017,9 +1082,24 @@ Public Class DadosAlt
         Me.AtendimentoTableAdapter.Fill(Me.MeuescDataSet.Atendimento)
         display_dados()
         MaskedTextBox2.Culture = System.Globalization.CultureInfo.InvariantCulture
+        audproc1.Culture = System.Globalization.CultureInfo.InvariantCulture
+        atproc1.Culture = System.Globalization.CultureInfo.InvariantCulture
+        PROVPROC1.Culture = System.Globalization.CultureInfo.InvariantCulture
 
+
+        TextBox1.Text = My.Settings.DiasAntes
 
         'RESPONSÁVEL NOME
+
+        ResponsavelNome()
+
+
+
+        'FIM RESPONSAVEL NOME
+
+    End Sub
+
+    Private Sub ResponsavelNome()
         If con.State = ConnectionState.Open Then
             con.Close()
 
@@ -1053,12 +1133,6 @@ Public Class DadosAlt
         ComboBox7.DataSource = dt
         ComboBox7.DisplayMember = "nome"
         ComboBox7.ValueMember = "usuario"
-
-
-        prazosparte()
-
-        'FIM RESPONSAVEL NOME
-
     End Sub
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
@@ -1150,6 +1224,7 @@ Public Class DadosAlt
         agendabtn.Visible = False
         painelbtn.Visible = False
 
+
         PictureBox4.Visible = False
         PictureBox5.Visible = False
         Menu.Visible = False
@@ -1232,6 +1307,7 @@ Public Class DadosAlt
         provstatus.ResetText()
 
 
+        ResponsavelNome()
 
 
 
@@ -1325,7 +1401,7 @@ Public Class DadosAlt
 
         cmd = con.CreateCommand()
         cmd.CommandType = CommandType.Text
-        cmd.CommandText = "insert into atendimento(id_client, data, hora, horamin, minuto, processo, Parte, anotacao) values ('" & id & "','" & data & "','" & hora & "','" & horamin & "','" & minuto & "','" & proc & "','" & parte & "','" & anotacao & "')"
+        cmd.CommandText = "insert into atendimento(id_client, data, hora, horamin, minuto, processo, Parte, anotacao, id_proc) values ('" & id & "','" & data & "','" & hora & "','" & horamin & "','" & minuto & "','" & proc & "','" & parte & "','" & anotacao & "', '" & 0 & "')"
         cmd.ExecuteNonQuery()
 
 
@@ -1338,6 +1414,7 @@ Public Class DadosAlt
         atobs.ResetText()
 
 
+        ResponsavelNome()
 
         display_dados()
 
@@ -1355,4 +1432,112 @@ Public Class DadosAlt
         Catch ex As Exception
         End Try
     End Sub
+
+    Private Sub AtendimentoStripMenuItem2_Click(sender As Object, e As EventArgs) Handles AtendimentoStripMenuItem2.Click
+        atendimento_dados()
+
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        Usuario.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+        If TabControl1.SelectedIndex = 0 Then
+
+            Consulta.TabControl1.SelectTab("TabPage2")
+
+            TextBox2.Visible = True
+
+            If con.State = ConnectionState.Open Then
+                con.Close()
+
+            End If
+            con.Open()
+
+            Dim i As String
+            i = Convert.ToInt32(DataGridView1.SelectedCells.Item(0).Value.ToString())
+
+
+            cmd = con.CreateCommand()
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = "select * from dadosprazos1 where id = '" & i & "'"
+            cmd.ExecuteNonQuery()
+
+            Dim dt As New DataTable()
+            Dim da As New SqlDataAdapter(cmd)
+            da.Fill(dt)
+
+            Dim dr As SqlClient.SqlDataReader
+            dr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+            While dr.Read
+                Consulta.idtxt.Text = dr.GetInt32(0)
+                Consulta.diasprazoud.Text = dr.GetInt32(3)
+                Consulta.dprazofatal.Text = dr.GetString(5).ToString
+                Consulta.ddataprazo.Text = dr.GetString(4).ToString
+                Consulta.respcb.Text = dr.GetString(1).ToString
+                Consulta.partetxt.Text = dr.GetString(7).ToString
+                Consulta.statuscb.Text = dr.GetString(9).ToString
+                Consulta.diltxt.Text = dr.GetString(8).ToString
+                Consulta.textbox2.Text = dr.GetString(6).ToString
+                Consulta.datapubtxt.Text = dr.GetString(2).ToString
+            End While
+
+            Consulta.ShowDialog()
+        ElseIf TabControl1.SelectedIndex = 3 Then
+            TextBox2.Visible = True
+            Consulta.TabControl1.SelectTab("TabPage1")
+            If con.State = ConnectionState.Open Then
+                con.Close()
+
+            End If
+            con.Open()
+
+            Dim i As String
+            i = Convert.ToInt32(DataGridView1.SelectedCells.Item(0).Value.ToString())
+
+
+            cmd = con.CreateCommand()
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = "select * from providencias where id = '" & i & "'"
+            cmd.ExecuteNonQuery()
+
+            Dim dt As New DataTable()
+            Dim da As New SqlDataAdapter(cmd)
+            da.Fill(dt)
+
+            Dim dr As SqlClient.SqlDataReader
+            dr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+            While dr.Read
+                Consulta.provanot.Text = dr.GetString(6).ToString
+                Consulta.provanot2.Text = dr.GetString(6).ToString
+                Consulta.provdili.Text = dr.GetString(5).ToString
+                Consulta.provproc.Text = dr.GetString(3).ToString
+                Consulta.provresp.Text = dr.GetString(1).ToString
+                Consulta.provstatus.Text = dr.GetString(7).ToString
+                Consulta.provprazo.Text = dr.GetString(2).ToString
+                Consulta.provcliente.Text = dr.GetString(4).ToString
+                Consulta.Label7.Text = dr.GetInt32(0)
+
+            End While
+
+            Consulta.ShowDialog()
+        Else
+            Return
+
+        End If
+    End Sub
+
+    Private Sub ddataprazo_ValueChanged(sender As Object, e As EventArgs) Handles ddataprazo.ValueChanged
+        dprazofatal.Value = ddataprazo.Value
+    End Sub
+
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        Login.Show()
+        Me.Close()
+        fundo.Close()
+    End Sub
+
+
 End Class
